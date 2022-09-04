@@ -1,4 +1,5 @@
 import "../assets/css/App.css";
+import Musics from "../components/Musics";
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 
@@ -7,7 +8,10 @@ function Home() {
     <main>
       <div className="main-navigation">
         <Sidebar />
-        <Navbar />
+        <div className="content">
+          <Navbar />
+          <Musics />
+        </div>
       </div>
     </main>
   );
