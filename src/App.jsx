@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import reactLogo from "./assets/react.svg";
 import "./assets/css/App.css";
-import Sidebar from "./components/Sidebar";
+import "./assets/css/custom.css";
+import Home from "./pages/Home";
 
 function App() {
   const CLIENT_ID = "068fc5eedfa7413d85570a55dbfafcbf";
@@ -47,7 +47,7 @@ function App() {
   }, [setState]);
   return (
     <main>
-      <Sidebar />
+      <Home />
     </main>
   );
 }
