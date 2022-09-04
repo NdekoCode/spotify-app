@@ -6,7 +6,7 @@ const Musics = () => {
       <div>
         <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
           {/* CARD 1 */}
-          <div className="rounded-2xl p-3">
+          <div className="rounded-2xl p-3 bg-white shadow-sm">
             <div className="group relative">
               <img
                 className="w-full md:w-72 block rounded-2xl shadow-2xl"
@@ -59,7 +59,7 @@ const Musics = () => {
           </div>
           {/* END OF CARD 1 */}
           {/* CARD 2 */}
-          <div className="rounded-2xl p-3">
+          <div className="rounded-2xl p-3 bg-white shadow-sm">
             <div className="group relative">
               <img
                 className="w-full md:w-72 block rounded-2xl shadow-2xl"
@@ -112,7 +112,7 @@ const Musics = () => {
           </div>
           {/* END OF CARD 2 */}
           {/* CARD 3 */}
-          <div className="rounded-2xl p-3">
+          <div className="rounded-2xl p-3 bg-white shadow-sm">
             <div className="group relative">
               <img
                 className="w-full md:w-72 block rounded-2xl shadow-2xl"
@@ -166,7 +166,7 @@ const Musics = () => {
           {/* END OF CARD 3 */}
 
           {/* CARD 4 */}
-          <div className="rounded-2xl p-3">
+          <div className="rounded-2xl p-3 bg-white shadow-sm">
             <div className="group relative">
               <img
                 className="w-full md:w-72 block rounded-2xl shadow-2xl"
@@ -220,7 +220,7 @@ const Musics = () => {
           {/* END OF CARD 4 */}
 
           {/* CARD 5 */}
-          <div className="rounded-2xl p-3">
+          <div className="rounded-2xl p-3 bg-white shadow-sm">
             <div className="group relative">
               <img
                 className="w-full md:w-72 block rounded-2xl shadow-2xl"

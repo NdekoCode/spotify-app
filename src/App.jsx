@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import "./assets/css/App.css";
 import "./assets/css/custom.css";
 import Home from "./pages/Home";
+import MusicContext from "./data/MusicContext";
 
 function App() {
   const CLIENT_ID = "068fc5eedfa7413d85570a55dbfafcbf";
@@ -14,6 +15,11 @@ function App() {
     token: "",
     authorize_token: "",
   });
+  const value = {
+    data: state.data,
+    setData: setState,
+  };
+
   useEffect(() => {
     (async () => {
       const response = await fetch("https://accounts.spotify.com/api/token", {
@@ -46,9 +52,11 @@ function App() {
     })();
   }, [setState]);
   return (
-    <main>
-      <Home />
-    </main>
+    <MusicContext.Provider value={value}>
+      <main>
+        <Home />
+      </main>
+    </MusicContext.Provider>
   );
 }
 

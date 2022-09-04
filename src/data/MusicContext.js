@@ -1,9 +1,10 @@
 import { createContext } from "react";
 
-const musicContext = createContext({
+const MusicContext = createContext({
   user: {},
   data: {},
   updateData: (value) => {},
   addData: () => {},
+  setData: () => {},
 });
-export default musicContext;
+export default MusicContext;
