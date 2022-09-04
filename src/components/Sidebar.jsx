@@ -1,20 +1,19 @@
 import React from "react";
-
+import logo from "../assets/img/drc.svg";
 const Sidebar = () => {
   return (
-    <aside className="w-64" aria-label="Sidebar">
-      <div className="overflow-y-auto py-4 px-3 bg-gray-50 rounded dark:bg-gray-800">
+    <aside
+      className="w-80 min-h-screen mx-auto bg-gray-50 rounded dark:bg-gray-800 p-5"
+      aria-label="Sidebar"
+    >
+      <div className="overflow-y-auto pt-0 p-5">
         <a
           href="https://flowbite.com/"
-          className="flex items-center pl-2.5 mb-5"
+          className="flex items-center pl-2.5 mb-10"
         >
-          <img
-            src="https://flowbite.com/docs/images/logo.svg"
-            className="mr-3 h-6 sm:h-7"
-            alt="Flowbite Logo"
-          />
+          <img src={logo} className="mr-3 h-6 sm:h-7" alt="NdekoMusic Logo" />
           <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
-            Flowbite
+            NdekoMusic
           </span>
         </a>
         <ul className="space-y-2">
