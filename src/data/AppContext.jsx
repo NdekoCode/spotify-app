@@ -2,6 +2,11 @@ import { createContext, useContext, useState } from "react";
 
 const AppContext = createContext();
 export const ContextProvider = ({ children }) => {
+  const [setting, setSetting] = useState({
+    main_url: "https://api.spotify.com/v1",
+    token: "",
+    authorize_token: "",
+  });
   const [userData, setUserData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [idSong, setIdSong] = useState("");
@@ -17,8 +22,9 @@ export const ContextProvider = ({ children }) => {
     playlists: {},
   });
 
-  console.log("render func");
   const value = {
+    setting,
+    setSetting,
     userData,
     setUserData,
     isLoading,
@@ -33,7 +39,6 @@ export const ContextProvider = ({ children }) => {
     searchUser,
     setSearchUser,
   };
-  console.log(value);
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 };
 const MusicContext = () => useContext(AppContext);

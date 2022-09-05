@@ -16,7 +16,6 @@ const Musics = () => {
       let { items } = tracks;
       items = items.slice(0, 15);
       let albumItems = albums.items.slice(0, 12);
-      console.log(albumItems);
       return (
         <main className="grid place-items-center mt-5 p-5">
           <div>

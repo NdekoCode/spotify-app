@@ -20,12 +20,12 @@ export default function useFetch(url, data, token) {
       const response = await fetch(url, params);
       data = await response.json();
       if (response.ok) {
-        setState((state) => ({
-          items: Object.assign(state.items, data),
+        setState({
+          items: data,
           loading: false,
-        }));
+        });
       }
     })();
-  }, []);
+  }, [data, state, setState]);
   return [state.items, state.loading];
 }

@@ -6,7 +6,6 @@ import MusicContext from "../data/AppContext";
 import useFetch from "../data/hookFunc";
 
 export default function Home() {
-  console.log("render");
   const { searchUser } = MusicContext();
   const url = `https://api.spotify.com/v1/search?q=${searchUser}&type=album,track,artist,playlist,show,episode&include_external=audio`;
   const [data] = useFetch(url);

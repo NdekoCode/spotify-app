@@ -8,12 +8,14 @@ import routes from "./routes/routes";
 import MusicContext from "./data/AppContext";
 
 function App() {
-  const [setting, setSetting] = useState({
-    main_url: "https://api.spotify.com/v1",
-    token: "",
-    authorize_token: "",
-  });
-
+  const {
+    setting,
+    setSetting,
+    searchUser,
+    dataSongs,
+    setDataSong,
+    setIsLoading,
+  } = MusicContext();
   useEffect(() => {
     (async () => {
       const response = await fetch("https://accounts.spotify.com/api/token", {
@@ -34,7 +36,6 @@ function App() {
     })();
   }, [setSetting]);
 
-  const { searchUser, dataSongs, setDataSong, setIsLoading } = MusicContext();
   const url = `https://api.spotify.com/v1/search?q=${searchUser}&type=album,track,artist,playlist,show,episode&include_external=audio`;
   const [data, loading] = useFetch(url, dataSongs, setting.authorize_token);
   setDataSong(data);
