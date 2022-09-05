@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./assets/css/App.css";
 import "./assets/css/custom.css";
 import Home from "./pages/Home";
 import MusicContext from "./data/MusicContext";
+import routes from "./routes/routes";
 
 function App() {
   const CLIENT_ID = "068fc5eedfa7413d85570a55dbfafcbf";
@@ -53,9 +55,17 @@ function App() {
   }, [setState]);
   return (
     <MusicContext.Provider value={value}>
-      <main>
-        <Home />
-      </main>
+      <BrowserRouter>
+        <Routes>
+          {routes.map(({ path, element }) => (
+            <Route path={path} element={element} />
+          ))}
+        </Routes>
+
+        <main>
+          <Home />
+        </main>
+      </BrowserRouter>
     </MusicContext.Provider>
   );
 }
