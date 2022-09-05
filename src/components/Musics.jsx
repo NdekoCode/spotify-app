@@ -1,17 +1,22 @@
-import React, { useContext } from "react";
-import MusicContext from "../data/MusicContext";
-import CardArtist from "./CardArtist";
+import MusicContext from "../data/AppContext";
+import { catString } from "../data/utilsFunc";
 import CardDetails from "./CardDetails";
 import CardSong from "./CardSong";
 
 const Musics = () => {
-  const { data } = useContext(MusicContext);
-  if (data !== null) {
-    const { albums, artists, playlists, tracks } = data;
+  const { dataSongs } = MusicContext();
+  if (dataSongs !== null) {
+    const { albums, artists, playlists, tracks } = dataSongs;
 
-    if (tracks !== null && tracks !== undefined) {
-      const { items } = tracks;
-      const albumItems = albums.items;
+    if (
+      tracks !== null &&
+      tracks !== undefined &&
+      Object.keys(tracks).length > 0
+    ) {
+      let { items } = tracks;
+      items = items.slice(0, 15);
+      let albumItems = albums.items.slice(0, 12);
+      console.log(albumItems);
       return (
         <main className="grid place-items-center mt-5 p-5">
           <div>
@@ -21,10 +26,11 @@ const Musics = () => {
             <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
               {items.map(
                 (
-                  { album, artists, duration_ms, external_urls, name },
+                  { id, album, artists, duration_ms, external_urls, name },
                   index
                 ) => (
                   <CardSong
+                    id={id}
                     key={index}
                     album={album}
                     name={name}
@@ -34,11 +40,15 @@ const Musics = () => {
               )}
             </section>
 
-            <section className="grid grid-cols-1 lg:grid-cols-2  xl:grid-cols-3 gap-4">
+            <section className="grid grid-cols-1 lg:grid-cols-2  xl:grid-cols-2 gap-4">
               {albumItems.map(
-                ({ artists, images, total_tracks, release_date }, index) => (
+                (
+                  { artists, images, name, total_tracks, release_date },
+                  index
+                ) => (
                   <CardDetails
                     artists={artists}
+                    name={catString(name)}
                     images={images}
                     total_tracks={total_tracks}
                     release_date={release_date}

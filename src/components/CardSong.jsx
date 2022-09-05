@@ -1,6 +1,15 @@
-import React from "react";
+import React, { useCallback } from "react";
+import MusicContext from "../data/AppContext";
+import ModalPlayer from "./ModalPlayer";
 
-const CardSong = ({ album, name, artists }) => {
+const CardSong = ({ id, album, name, artists }) => {
+  const { showFrame, handleFrame, setShowFrame, idSong, setIdSong } =
+    MusicContext();
+  const showPlayer = useCallback(() => {
+    setIdSong(id);
+    handleFrame();
+    setShowFrame(true);
+  });
   return (
     <div className="rounded-2xl p-3 bg-white shadow-sm cursor-pointer">
       <div className="group relative">
@@ -22,7 +31,10 @@ const CardSong = ({ album, name, artists }) => {
               <path d="M8 2.748l-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z" />
             </svg>
           </button>
-          <button className="hover:scale-110 text-white opacity-0 transform translate-y-3 group-hover:translate-y-0 group-hover:opacity-100 transition duration-300">
+          <button
+            onClick={showPlayer}
+            className="hover:scale-110 text-white opacity-0 transform translate-y-3 group-hover:translate-y-0 group-hover:opacity-100 transition duration-300"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width={40}
@@ -54,6 +66,7 @@ const CardSong = ({ album, name, artists }) => {
         <h3 className="text-gray-600 text-lg">{name}</h3>
         <p className="text-gray-400">{artists[0].name}</p>
       </div>
+      <ModalPlayer id={idSong} visibility={showFrame} />
     </div>
   );
 };
