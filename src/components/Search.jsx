@@ -11,7 +11,7 @@ const Search = () => {
     setIsLoading,
     setSearchUser,
   } = MusicContext();
-  const url = `https://api.spotify.com/v1/search?q=${searchUser}&type=album,track,artist,playlist,show,episode&include_external=audio`;
+  const url = `https://api.spotify.com/v1/search?q=${searchUser}&type=album,track,artist,playlist,show,episode&include_external=audio?limit=15`;
   const [data, loading] = useFetch(url, dataSongs, setting.authorize_token);
   const handleSubmit = useCallback((evt) => {
     console.log("SUBMIT");

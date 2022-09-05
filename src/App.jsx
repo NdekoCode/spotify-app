@@ -38,6 +38,7 @@ function App() {
 
   const url = `https://api.spotify.com/v1/search?q=${searchUser}&type=album,track,artist,playlist,show,episode&include_external=audio`;
   const [data, loading] = useFetch(url, dataSongs, setting.authorize_token);
+  console.log(searchUser);
   setDataSong(data);
   setIsLoading(loading);
   return (
