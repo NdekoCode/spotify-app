@@ -19,6 +19,7 @@ function App() {
   });
   const value = {
     data: state.data,
+    searchValue: "",
     setData: setState,
   };
 
