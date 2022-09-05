@@ -7,7 +7,6 @@ import MusicContext from "../data/MusicContext";
 
 export default function Home() {
   const { data, setData } = useContext(MusicContext);
-  console.log(setData);
   return (
     <main>
       <div className="main-navigation">

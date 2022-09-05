@@ -8,7 +8,7 @@ import routes from "./routes/routes";
 
 function App() {
   const CLIENT_ID = "068fc5eedfa7413d85570a55dbfafcbf";
-  const CLIENT_SECRET = "1bbcd11145d84bbd8899c7cfce51ae68";
+  const CLIENT_SECRET = "53a98ecdb51b467f9495d127a587533a";
   const urlParams = "offset=20&limit=20";
 
   const [state, setState] = useState({
@@ -20,6 +20,7 @@ function App() {
   const value = {
     data: state.data,
     searchValue: "",
+    setSearch: (value) => {},
     setData: setState,
   };
 
