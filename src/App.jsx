@@ -61,10 +61,6 @@ function App() {
             <Route key={index} path={path} element={element} />
           ))}
         </Routes>
-
-        <main>
-          <Home />
-        </main>
       </BrowserRouter>
     </MusicContext.Provider>
   );

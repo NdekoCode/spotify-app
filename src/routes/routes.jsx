@@ -37,12 +37,10 @@ const routes = [
   },
 ];
 
-export default routes;
 export const asideLinks = [
   {
     path: "/",
     name: "Home",
-    element: <Home />,
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -71,7 +69,6 @@ export const asideLinks = [
         </g>
       </svg>
     ),
-    element: <Albums />,
   },
 
   {
@@ -90,26 +87,27 @@ export const asideLinks = [
         </g>
       </svg>
     ),
-    element: <Tracks />,
   },
 
   {
     path: "genres",
     name: "Genres",
     icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        className="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
-      >
-        <g data-name="35.Music">
-          <path d="M12 24a12 12 0 1 1 12-12 12.013 12.013 0 0 1-12 12zm0-22a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2z" />
-          <path d="M10 18a3 3 0 1 1 3-3 3 3 0 0 1-3 3zm0-4a1 1 0 1 0 1 1 1 1 0 0 0-1-1z" />
-          <path d="M13 15h-2V4.719l1.243.311C12.437 5.079 17 6.262 17 10h-2a3.1 3.1 0 0 0-2-2.542z" />
-        </g>
-      </svg>
+      <>
+        {/*?xml version="1.0" ?*/}
+        <svg
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+        >
+          <title />
+          <path
+            d="M22.71,2.71,21.29,1.29a1,1,0,0,0-1.41,0,1,1,0,0,0,0,1.42L14.63,8A4.52,4.52,0,0,0,8.09,10a6,6,0,0,0-4.33,1.75A6,6,0,0,0,8,22a5.93,5.93,0,0,0,4.24-1.76A6,6,0,0,0,14,15.91a4.52,4.52,0,0,0,2.06-6.54l5.24-5.25a1,1,0,0,0,1.42,0A1,1,0,0,0,22.71,2.71ZM9.41,17.41a2,2,0,1,1,0-2.82A2,2,0,0,1,9.41,17.41Z"
+            fill="#464646"
+          />
+        </svg>
+      </>
     ),
-    element: <Genres />,
   },
 
   {
@@ -119,20 +117,12 @@ export const asideLinks = [
       <svg
         xmlns="http://www.w3.org/2000/svg"
         className="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
-        xml:space="preserve"
-        width="655.359"
-        height="655.359"
-        style="shape-rendering:geometricPrecision;text-rendering:geometricPrecision;image-rendering:optimizeQuality;fill-rule:evenodd;clip-rule:evenodd"
-        viewBox="0 0 6.827 6.827"
+        viewBox="0 0 512 512"
       >
-        <path style="fill:#424242" d="M0 0h6.827v6.827H0z" />
-        <path
-          d="M3.413.853a2.56 2.56 0 1 1 0 5.12 2.56 2.56 0 0 1 0-5.12zm-.617 1.612c.316 0 .464.163.617.414.153-.25.302-.414.618-.414s.665.433.612.967c-.062.616-.583 1.082-1.23 1.403-.646-.32-1.168-.787-1.229-1.403-.053-.534.296-.967.612-.967zm.617-1.158a2.1 2.1 0 0 1 1.49.617 2.1 2.1 0 0 1 .617 1.49 2.1 2.1 0 0 1-.617 1.489 2.1 2.1 0 0 1-1.49.617 2.1 2.1 0 0 1-1.49-.617 2.1 2.1 0 0 1-.616-1.49 2.1 2.1 0 0 1 .617-1.49 2.1 2.1 0 0 1 1.49-.616zm1.377.73a1.94 1.94 0 0 0-1.377-.57 1.94 1.94 0 0 0-1.376.57 1.94 1.94 0 0 0-.57 1.376c0 .538.218 1.025.57 1.377.352.352.839.57 1.376.57a1.94 1.94 0 0 0 1.377-.57 1.94 1.94 0 0 0 .57-1.377 1.94 1.94 0 0 0-.57-1.376z"
-          style="fill:#fffffe"
-        />
+        <title>Heart Circle</title>
+        <path d="M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208 208-93.31 208-208S370.69 48 256 48zm74.69 252.82c-9.38 11.44-26.4 29.73-65.7 56.41a15.93 15.93 0 01-18 0c-39.3-26.68-56.32-45-65.7-56.41-20-24.37-29.58-49.4-29.3-76.5.31-31.06 25.22-56.33 55.53-56.33 20.4 0 35 10.63 44.1 20.41a6 6 0 008.72 0c9.11-9.78 23.7-20.41 44.1-20.41 30.31 0 55.22 25.27 55.53 56.33.3 27.1-9.29 52.13-29.28 76.5z" />
       </svg>
     ),
-    element: <Favoris />,
   },
 ];
 
@@ -141,33 +131,30 @@ export const homeRoute = [
     path: "/login",
     name: "Login",
     icon: "",
-    element: <Login />,
   },
   {
     path: "albums",
     name: "Album",
     icon: "",
-    element: <Albums />,
   },
 
   {
     path: "tracks",
     name: "Tracks",
     icon: "",
-    element: <Tracks />,
   },
 
   {
     path: "genres",
     name: "Genres",
     icon: "",
-    element: <Genres />,
   },
 
   {
     path: "favorites",
     name: "Favorite Tracks",
     icon: "",
-    element: <Favoris />,
   },
 ];
+
+export default routes;

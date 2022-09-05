@@ -5,7 +5,7 @@ import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 import MusicContext from "../data/MusicContext";
 
-function Home() {
+export default function Home() {
   const { data, setData } = useContext(MusicContext);
   console.log(setData);
   return (
@@ -20,5 +20,3 @@ function Home() {
     </main>
   );
 }
-
-export default Home;
