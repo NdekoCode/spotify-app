@@ -1,6 +1,7 @@
 import React from "react";
 import Albums from "../pages/Albums";
 import Home from "../pages/Home";
+import Tracks from "../pages/Tracks";
 
 const routes = [
   {
@@ -14,6 +15,13 @@ const routes = [
     name: "Album",
     icon: "",
     element: <Albums />,
+  },
+
+  {
+    path: "tracks",
+    name: "Tracks",
+    icon: "",
+    element: <Tracks />,
   },
 ];
 
