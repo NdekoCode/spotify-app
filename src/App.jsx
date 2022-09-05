@@ -57,8 +57,8 @@ function App() {
     <MusicContext.Provider value={value}>
       <BrowserRouter>
         <Routes>
-          {routes.map(({ path, element }) => (
-            <Route path={path} element={element} />
+          {routes.map(({ path, element }, index) => (
+            <Route key={index} path={path} element={element} />
           ))}
         </Routes>
 
