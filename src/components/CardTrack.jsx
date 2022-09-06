@@ -3,6 +3,8 @@ import MusicContext from "../data/AppContext";
 
 const CardTrack = ({ track }) => {
   const { album, artists, name, id, type } = track;
+
+  console.log(track);
   const { handleFrame, setTypePlay, setShowFrame, setIdSong } = MusicContext();
   const showPlayer = useCallback(() => {
     setIdSong(id);
@@ -11,7 +13,7 @@ const CardTrack = ({ track }) => {
     setShowFrame(true);
   });
   return (
-    <div className="card-track ounded-2xl bg-white dark:bg-gray-700 shadow-lg cursor-pointer min-w-max">
+    <div className="card-track ounded-2xl bg-white dark:bg-gray-700 shadow cursor-pointer min-w-max mb-3">
       <div className="group relative h-60 flex flex-col items-center ">
         <img
           className="block rounded-full h-40 w-40 shadow-2xl"
@@ -38,9 +40,12 @@ const CardTrack = ({ track }) => {
       </div>
       <div className="p-1">
         <h3 className="text-gray-600 dark:text-white text-lg font-semibold">
-          Artist
+          {artists.map(
+            (artist, index) =>
+              artist.name + (index + 1 < artists.length ? ", " : "")
+          )}
         </h3>
-        <p className="text-gray-400 dark:text-gray-200">Description</p>
+        <p className="text-gray-400 dark:text-gray-200">{name}</p>
       </div>
     </div>
   );

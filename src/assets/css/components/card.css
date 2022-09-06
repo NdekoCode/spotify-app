@@ -3,7 +3,7 @@
   isolation: isolate;
   position: relative;
   min-height: 300px;
-  width: 220px;
+  min-width: 220px;
 }
 .card-track:hover {
   color: #fff;
