@@ -5,7 +5,7 @@ import { asideLinks } from "../routes/routes";
 const Sidebar = () => {
   return (
     <aside
-      className="w-80 min-w-max min-h-screen mx-auto bg-gray-50 rounded dark:bg-gray-800 p-5"
+      className="w-96 min-w-max min-h-screen bg-gray-50 rounded dark:bg-gray-800 p-5"
       aria-label="Sidebar"
     >
       <div className="overflow-y-auto pt-0 p-5">

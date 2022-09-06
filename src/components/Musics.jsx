@@ -1,6 +1,5 @@
 import MusicContext from "../data/AppContext";
-import { catString } from "../data/utilsFunc";
-import CardDetails from "./CardDetails";
+import AlbumsData from "./AlbumsData";
 import CardSong from "./CardSong";
 
 const Musics = () => {
@@ -38,8 +37,8 @@ const Musics = () => {
                 )
               )}
             </section>
-
-            <section className="grid grid-cols-1 lg:grid-cols-2  xl:grid-cols-2 gap-4">
+            <AlbumsData albumItems={albumItems} />
+            {/* <section className="grid grid-cols-1 lg:grid-cols-2  xl:grid-cols-2 gap-4">
               {albumItems.map(
                 (
                   { artists, images, name, total_tracks, release_date },
@@ -55,7 +54,7 @@ const Musics = () => {
                   />
                 )
               )}
-            </section>
+            </section> */}
           </div>
         </main>
       );

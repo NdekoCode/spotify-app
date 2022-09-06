@@ -5,9 +5,6 @@ const ModalPlayer = memo(({ id, visibility }) => {
     return (
       <div className="modal">
         <iframe
-          style={{
-            borderRadius: 12 + "px",
-          }}
           src={`https://open.spotify.com/embed/track/${id}?utm_source=generator`}
           width="100%"
           height={380}

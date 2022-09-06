@@ -1,9 +1,8 @@
 import React from "react";
-import MusicContext from "../data/AppContext";
+import MusicApp from "../components/MusicApp";
 
 const Tracks = () => {
-  const { idSong, showFrame } = MusicContext();
-  return <div>Tracks</div>;
+  return <MusicApp>Je suis les albums</MusicApp>;
 };
 
 export default Tracks;
