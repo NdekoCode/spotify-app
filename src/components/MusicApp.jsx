@@ -1,10 +1,11 @@
-import React from "react";
-import ModalPlayer from "../components/ModalPlayer";
-import Navbar from "../components/Navbar";
-import Sidebar from "../components/Sidebar";
+import React, { memo } from "react";
+import Navbar from "./Navbar";
+import Sidebar from "./Sidebar";
 import MusicContext from "../data/AppContext";
+import ModalPlayer from "./ModalPlayer";
 
-const Favoris = () => {
+const MusicApp = memo(({ children }) => {
+  console.log("render music app");
   const { idSong, showFrame } = MusicContext();
   return (
     <>
@@ -14,11 +15,12 @@ const Favoris = () => {
           <Sidebar />
           <div className="content">
             <Navbar />
+            {children}
           </div>
         </div>
       </main>
     </>
   );
-};
+});
 
-export default Favoris;
+export default MusicApp;

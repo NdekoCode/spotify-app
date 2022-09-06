@@ -1,7 +1,7 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import logo from "../assets/img/drc.svg";
 import { asideLinks } from "../routes/routes";
-import AsideLink from "./AsideLink";
 const Sidebar = () => {
   return (
     <aside
@@ -17,7 +17,15 @@ const Sidebar = () => {
         </a>
         <ul className="space-y-2">
           {asideLinks.map(({ path, name, icon }, index) => (
-            <AsideLink key={index} path={path} name={name} icon={icon} />
+            <li key={index}>
+              <NavLink
+                to={path}
+                className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+              >
+                {icon}
+                <span className="ml-3">{name}</span>
+              </NavLink>
+            </li>
           ))}
         </ul>
       </div>

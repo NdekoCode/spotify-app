@@ -1,7 +1,7 @@
-import React from "react";
+import MusicApp from "../components/MusicApp";
 
 const Albums = () => {
-  return <div>LOl</div>;
+  return <MusicApp>Je suis les albums</MusicApp>;
 };
 
 export default Albums;

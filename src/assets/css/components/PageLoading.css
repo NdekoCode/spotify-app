@@ -7,7 +7,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(110deg, #beb9b9 15%, #f5f5f5 30%, #a09d9d 45%);
+  background: #eee;
+  /* background: linear-gradient(110deg, #beb9b9 15%, #f5f5f5 30%, #a09d9d 45%); */
+  background: linear-gradient(110deg, #d3d0d0 10%, #f5f5f5 20%, #d3d0d0 33%);
   background-size: 200% 100%;
   animation: Fadeskeleton 1.75s ease-in-out infinite alternate;
 }

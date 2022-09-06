@@ -8,7 +8,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         {routes.map(({ path, element }, index) => (
-          <Route key={index} path={path} element={element} />
+          <Route key={index} exact path={path} element={element} />
         ))}
       </Routes>
     </BrowserRouter>

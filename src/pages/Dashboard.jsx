@@ -1,9 +1,7 @@
 import { useEffect } from "react";
 import "../assets/css/App.css";
-import ModalPlayer from "../components/ModalPlayer";
+import MusicApp from "../components/MusicApp";
 import Musics from "../components/Musics";
-import Navbar from "../components/Navbar";
-import Sidebar from "../components/Sidebar";
 import MusicContext from "../data/AppContext";
 import useFetch from "../data/hookFunc";
 import { CLIENT_ID, CLIENT_SECRET } from "../data/secureData";
@@ -12,11 +10,9 @@ export default function Dashboard() {
   const {
     setting,
     setSetting,
-    idSong,
     searchUser,
     isLoading,
     dataSongs,
-    showFrame,
     setDataSong,
     setIsLoading,
   } = MusicContext();
@@ -51,17 +47,8 @@ export default function Dashboard() {
   setIsLoading(loading);
 
   return (
-    <>
-      <ModalPlayer id={idSong} visibility={showFrame} />
-      <main>
-        <div className="main-navigation">
-          <Sidebar />
-          <div className="content">
-            <Navbar />
-            <Musics dataSongs={data} />
-          </div>
-        </div>
-      </main>
-    </>
+    <MusicApp>
+      <Musics dataSongs={data} />
+    </MusicApp>
   );
 }

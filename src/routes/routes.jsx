@@ -7,13 +7,6 @@ const Dashboard = lazy(() => import("../pages/Dashboard"));
 const Login = lazy(() => import("../pages/Login"));
 const Tracks = lazy(() => import("../pages/Tracks"));
 const Home = lazy(() => import("../pages/Home"));
-// import Albums from "../pages/Albums";
-// import Favoris from "../pages/Favoris";
-// import Genres from "../pages/Genres";
-// import Login from "../pages/Login";
-// import Tracks from "../pages/Tracks";
-// import Dashboard from "../pages/Dashboard";
-// import Home from "../pages/Home";
 
 const routes = [
   {
@@ -41,7 +34,7 @@ const routes = [
     ),
   },
   {
-    path: "albums",
+    path: "/albums",
     element: (
       <Suspense fallback={<LoadingPage />}>
         <Albums />
@@ -50,7 +43,7 @@ const routes = [
   },
 
   {
-    path: "tracks",
+    path: "/tracks",
     element: (
       <Suspense fallback={<LoadingPage />}>
         <Tracks />
@@ -59,7 +52,7 @@ const routes = [
   },
 
   {
-    path: "genres",
+    path: "/genres",
     element: (
       <Suspense fallback={<LoadingPage />}>
         <Genres />
@@ -68,7 +61,7 @@ const routes = [
   },
 
   {
-    path: "favorites",
+    path: "/favorites",
     element: (
       <Suspense fallback={<LoadingPage />}>
         <Favoris />
@@ -79,7 +72,7 @@ const routes = [
 
 export const asideLinks = [
   {
-    path: "/",
+    path: "/dashboard",
     name: "Dashboard",
     icon: (
       <svg
@@ -94,7 +87,7 @@ export const asideLinks = [
     ),
   },
   {
-    path: "albums",
+    path: "/albums",
     name: "Albums",
     icon: (
       <svg
@@ -112,7 +105,7 @@ export const asideLinks = [
   },
 
   {
-    path: "tracks",
+    path: "/tracks",
     name: "Tracks",
     icon: (
       <svg
@@ -130,28 +123,25 @@ export const asideLinks = [
   },
 
   {
-    path: "genres",
+    path: "/genres",
     name: "Genres",
     icon: (
-      <>
-        {/*?xml version="1.0" ?*/}
-        <svg
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
-        >
-          <title />
-          <path
-            d="M22.71,2.71,21.29,1.29a1,1,0,0,0-1.41,0,1,1,0,0,0,0,1.42L14.63,8A4.52,4.52,0,0,0,8.09,10a6,6,0,0,0-4.33,1.75A6,6,0,0,0,8,22a5.93,5.93,0,0,0,4.24-1.76A6,6,0,0,0,14,15.91a4.52,4.52,0,0,0,2.06-6.54l5.24-5.25a1,1,0,0,0,1.42,0A1,1,0,0,0,22.71,2.71ZM9.41,17.41a2,2,0,1,1,0-2.82A2,2,0,0,1,9.41,17.41Z"
-            fill="#464646"
-          />
-        </svg>
-      </>
+      <svg
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+        className="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+      >
+        <title />
+        <path
+          d="M22.71,2.71,21.29,1.29a1,1,0,0,0-1.41,0,1,1,0,0,0,0,1.42L14.63,8A4.52,4.52,0,0,0,8.09,10a6,6,0,0,0-4.33,1.75A6,6,0,0,0,8,22a5.93,5.93,0,0,0,4.24-1.76A6,6,0,0,0,14,15.91a4.52,4.52,0,0,0,2.06-6.54l5.24-5.25a1,1,0,0,0,1.42,0A1,1,0,0,0,22.71,2.71ZM9.41,17.41a2,2,0,1,1,0-2.82A2,2,0,0,1,9.41,17.41Z"
+          fill="#464646"
+        />
+      </svg>
     ),
   },
 
   {
-    path: "favorites",
+    path: "/favorites",
     name: "Favorite Tracks",
     icon: (
       <svg
@@ -184,7 +174,7 @@ export const homeRoute = [
   },
 
   {
-    path: "https://www.spotify.com/cd-sw/download/",
+    path: "/https://www.spotify.com/cd-sw/download/",
     name: "Download",
     icon: "",
   },
