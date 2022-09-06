@@ -1,6 +1,5 @@
 import React, { useCallback } from "react";
 import MusicContext from "../data/AppContext";
-import ModalPlayer from "./ModalPlayer";
 
 const CardSong = ({ id, album, name, artists }) => {
   const { handleFrame, setShowFrame, setIdSong } = MusicContext();

@@ -5,8 +5,13 @@ import Genres from "../pages/Genres";
 import Login from "../pages/Login";
 import Tracks from "../pages/Tracks";
 import Dashboard from "../pages/Dashboard";
+import Home from "../pages/Home";
 
 const routes = [
+  {
+    path: "/",
+    element: <Home />,
+  },
   {
     path: "/dashboard",
     element: <Dashboard />,

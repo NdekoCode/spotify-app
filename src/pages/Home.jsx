@@ -1,22 +1,15 @@
 import "../assets/css/App.css";
-import Musics from "../components/Musics";
+import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
-import Sidebar from "../components/Sidebar";
-import MusicContext from "../data/AppContext";
-import useFetch from "../data/hookFunc";
+import NavbarHome from "../components/NavbarHome";
 
 export default function Home() {
-  const { searchUser } = MusicContext();
-  const url = `https://api.spotify.com/v1/search?q=${searchUser}&type=album,track,artist,playlist,show,episode&include_external=audio`;
-  const [data] = useFetch(url);
-
   return (
     <main>
       <div className="main-navigation">
-        <Sidebar />
         <div className="content">
-          <Navbar />
-          <Musics dataSongs={data} />
+          <NavbarHome />
+          <Hero />
         </div>
       </div>
     </main>
