@@ -88,6 +88,7 @@ export const asideLinks = [
         xmlns="http://www.w3.org/2000/svg"
         className="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
         viewBox="0 0 512 512"
+        fill="currentColor"
       >
         <title>Home</title>
         <path d="M261.56 101.28a8 8 0 00-11.06 0L66.4 277.15a8 8 0 00-2.47 5.79L63.9 448a32 32 0 0032 32H192a16 16 0 0016-16V328a8 8 0 018-8h80a8 8 0 018 8v136a16 16 0 0016 16h96.06a32 32 0 0032-32V282.94a8 8 0 00-2.47-5.79z" />
@@ -103,6 +104,7 @@ export const asideLinks = [
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
         className="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+        fill="currentColor"
       >
         <g data-name="album music">
           <path d="M22.76 7.34C22.32 6.85 23.8 7 2 7a1 1 0 0 0-1 1.14l2 14A1 1 0 0 0 4 23h16a1 1 0 0 0 1-.86C23.15 7 23.18 7.84 22.76 7.34zM19.13 21H4.87L3.15 9h17.7z" />
@@ -121,6 +123,7 @@ export const asideLinks = [
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
         className="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+        fill="currentColor"
       >
         <g data-name="35.Music">
           <path d="M12 24a12 12 0 1 1 12-12 12.013 12.013 0 0 1-12 12zm0-22a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2z" />
@@ -138,6 +141,7 @@ export const asideLinks = [
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
         className="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+        fill="currentColor"
       >
         <g data-name="35.Music">
           <path d="M12 24a12 12 0 1 1 12-12 12.013 12.013 0 0 1-12 12zm0-22a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2z" />
@@ -156,6 +160,7 @@ export const asideLinks = [
         viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg"
         className="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+        fill="currentColor"
       >
         <title />
         <path
@@ -173,6 +178,7 @@ export const asideLinks = [
       <svg
         xmlns="http://www.w3.org/2000/svg"
         className="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+        fill="currentColor"
         viewBox="0 0 512 512"
       >
         <title>Heart Circle</title>
