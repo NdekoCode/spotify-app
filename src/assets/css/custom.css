@@ -41,4 +41,15 @@
 .modal iframe #root {
   display: flex;
   align-items: center;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.modal .hide {
+  position: absolute;
+  top: -20px;
+  right: -40px;
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
 }
