@@ -19,7 +19,7 @@ const CardArtist = () => {
             </p>
             <p className="text-gray-400 text-sm">@witch_forever</p>
           </div>
-          <button className="p-4 rounded-full transition ease-in duration-200 focus:outline-none">
+          <button className="btn-m p-4 rounded-full transition ease-in duration-200 focus:outline-none">
             <svg
               viewBox="0 0 20 20"
               enableBackground="new 0 0 20 20"

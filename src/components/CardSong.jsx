@@ -1,10 +1,11 @@
 import React, { useCallback } from "react";
 import MusicContext from "../data/AppContext";
 
-const CardSong = ({ id, album, name, artists }) => {
-  const { handleFrame, setShowFrame, setIdSong } = MusicContext();
+const CardSong = ({ id, album, name, artists, type }) => {
+  const { handleFrame, setTypePlay, setShowFrame, setIdSong } = MusicContext();
   const showPlayer = useCallback(() => {
     setIdSong(id);
+    setTypePlay(type);
     handleFrame();
     setShowFrame(true);
   });

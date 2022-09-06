@@ -1,11 +1,13 @@
 import React, { memo } from "react";
 
-const ModalPlayer = memo(({ id, visibility }) => {
+const ModalPlayer = memo(({ id, visibility, type }) => {
   if (visibility) {
     return (
       <div className="modal">
         <iframe
-          src={`https://open.spotify.com/embed/track/${id}?utm_source=generator`}
+          src={`https://open.spotify.com/embed/${
+            type + "s"
+          }/${id}?utm_source=generator`}
           width="100%"
           height={380}
           frameBorder="0"

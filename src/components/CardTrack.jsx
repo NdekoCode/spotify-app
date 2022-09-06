@@ -1,6 +1,15 @@
-import React from "react";
+import React, { useCallback } from "react";
+import MusicContext from "../data/AppContext";
 
-const CardTrack = ({ trackItems }) => {
+const CardTrack = ({ track }) => {
+  const { album, artists, name, id, type } = track;
+  const { handleFrame, setTypePlay, setShowFrame, setIdSong } = MusicContext();
+  const showPlayer = useCallback(() => {
+    setIdSong(id);
+    setTypePlay(type);
+    handleFrame();
+    setShowFrame(true);
+  });
   return (
     <div className="card-track ounded-2xl bg-white dark:bg-gray-700 shadow-lg cursor-pointer min-w-max">
       <div className="group relative h-60 flex flex-col items-center ">
@@ -11,7 +20,7 @@ const CardTrack = ({ trackItems }) => {
         />
         <div className="absolute h-40 w-40 bg-gray-800 bg-opacity-0 group-hover:bg-opacity-60 flex items-center rounded-full group-hover:opacity-100 transition duration-300 justify-evenly">
           <button
-            // onClick={showPlayer}
+            onClick={showPlayer}
             className="hover:scale-110 text-green-500 opacity-0 transform translate-y-3 group-hover:translate-y-0 group-hover:opacity-100 transition duration-300"
           >
             <svg

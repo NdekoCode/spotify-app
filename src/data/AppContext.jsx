@@ -8,6 +8,7 @@ export const ContextProvider = memo(({ children }) => {
     authorize_token: "",
   });
   const [userData, setUserData] = useState({});
+  const [typePlay, setTypePlay] = useState({});
   const [menu, toggleMenu] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [idSong, setIdSong] = useState("");
@@ -41,6 +42,8 @@ export const ContextProvider = memo(({ children }) => {
     setSearchUser,
     menu,
     toggleMenu,
+    typePlay,
+    setTypePlay,
   };
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;

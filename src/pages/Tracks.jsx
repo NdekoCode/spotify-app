@@ -6,11 +6,13 @@ import CardTrack from "../components/CardTrack";
 
 const Tracks = () => {
   const { dataSongs } = MusicContext();
+  console.log(dataSongs);
   const { tracks } = dataSongs;
-  console.log(tracks);
   return (
     <MusicApp>
-      <CardTrack />
+      {tracks.items.map((track, index) => (
+        <CardTrack track={track} />
+      ))}
     </MusicApp>
   );
 };
