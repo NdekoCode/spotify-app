@@ -1,11 +1,18 @@
-import React from "react";
-import Albums from "../pages/Albums";
-import Favoris from "../pages/Favoris";
-import Genres from "../pages/Genres";
-import Login from "../pages/Login";
-import Tracks from "../pages/Tracks";
-import Dashboard from "../pages/Dashboard";
-import Home from "../pages/Home";
+import React, { lazy, Suspense } from "react";
+const Albums = lazy(() => import("../pages/Albums"));
+const Favoris = lazy(() => import("../pages/Favoris"));
+const Genres = lazy(() => import("../pages/Genres"));
+const Dashboard = lazy(() => import("../pages/Dashboard"));
+const Login = lazy(() => import("../pages/Login"));
+const Tracks = lazy(() => import("../pages/Tracks"));
+const Home = lazy(() => import("../pages/Home"));
+// import Albums from "../pages/Albums";
+// import Favoris from "../pages/Favoris";
+// import Genres from "../pages/Genres";
+// import Login from "../pages/Login";
+// import Tracks from "../pages/Tracks";
+// import Dashboard from "../pages/Dashboard";
+// import Home from "../pages/Home";
 
 const routes = [
   {
@@ -18,7 +25,11 @@ const routes = [
   },
   {
     path: "/login",
-    element: <Login />,
+    element: (
+      <Suspense fallback={"TEXT"}>
+        <Login />
+      </Suspense>
+    ),
   },
   {
     path: "albums",
@@ -133,6 +144,11 @@ export const asideLinks = [
 export const homeRoute = [
   {
     path: "/",
+    name: "Home",
+    icon: "",
+  },
+  {
+    path: "/dashboard",
     name: "Premium",
     icon: "",
   },

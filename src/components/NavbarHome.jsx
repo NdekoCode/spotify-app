@@ -64,9 +64,11 @@ const NavbarHome = () => {
             </button>
             <ul className="flex text-3xl md:text-base items-center py-10 md:flex flex-col md:flex-row justify-center fixed md:relative top-0 bottom-0 left-0 right-0 bg-white md:bg-transparent z-20">
               {homeRoute.map(({ path, name }, index) => (
-                <li className="text-gray-700 hover:text-gray-900 cursor-pointer text-base lg:text-lg pt-10 md:pt-0">
+                <li
+                  key={index}
+                  className="text-gray-700 hover:text-gray-900 cursor-pointer text-base lg:text-lg pt-10 md:pt-0"
+                >
                   <NavLink
-                    key={index}
                     to={path}
                     className={(nav) =>
                       nav.isActive
