@@ -2,15 +2,10 @@ import React, { useCallback } from "react";
 import MusicContext from "../data/AppContext";
 import { catString } from "../data/utilsFunc";
 
-const CardDetails = ({
-  artists,
-  images,
-  name,
-  total_tracks,
-  release_date,
-  type,
-}) => {
-  const { handleFrame, setShowFrame, setIdSong } = MusicContext();
+const CardDetails = ({ album }) => {
+  console.log(album);
+  const { artists, images, name, total_tracks, release_date, id, type } = album;
+  const { handleFrame, setShowFrame, setTypePlay, setIdSong } = MusicContext();
   const showPlayer = useCallback(() => {
     setIdSong(id);
     setTypePlay(type);
@@ -20,7 +15,7 @@ const CardDetails = ({
   return (
     <div className="bg-white group py-6 flex flex-col justify-center sm:py-12">
       <div className="py-3 sm:max-w-xl sm:mx-auto">
-        <div className="bg-white shadow-lg border-gray-100 max-h-80	 border sm:rounded-3xl p-8 flex space-x-8">
+        <div className="bg-white shadow-lg border-gray-100 max-h-80	 border sm:rounded-3xl p-8 flex space-x-8 h-80">
           <div className="h-48 overflow-visible w-1/2">
             <img
               className="rounded-3xl shadow-lg object-cover"
@@ -30,7 +25,7 @@ const CardDetails = ({
           </div>
           <div className="flex flex-col w-1/2 space-y-4">
             <div className="flex justify-between items-start">
-              <h2 className="text-3xl font-bold"> {name}</h2>
+              <h2 className="text-3xl font-bold"> {catString(name)}</h2>
               <div className="bg-yellow-400 font-bold rounded-xl p-2">
                 {total_tracks}
               </div>

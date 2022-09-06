@@ -11,21 +11,9 @@ const AlbumsData = ({ albumItems }) => {
             Suggest Albums
           </h2>
           <section className="grid grid-cols-1 lg:grid-cols-2  xl:grid-cols-2 gap-4">
-            {albumItems.map(
-              (
-                { artists, images, name, total_tracks, release_date },
-                index
-              ) => (
-                <CardDetails
-                  artists={artists}
-                  name={catString(name)}
-                  images={images}
-                  total_tracks={total_tracks}
-                  release_date={release_date}
-                  key={index}
-                />
-              )
-            )}
+            {albumItems.map((album, index) => (
+              <CardDetails album={album} key={index} />
+            ))}
           </section>
         </div>
       </main>

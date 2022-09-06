@@ -10,9 +10,11 @@ const Tracks = () => {
   const { tracks } = dataSongs;
   return (
     <MusicApp>
-      {tracks.items.map((track, index) => (
-        <CardTrack track={track} />
-      ))}
+      <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+        {tracks.items.map((track, index) => (
+          <CardTrack key={index} track={track} />
+        ))}
+      </section>
     </MusicApp>
   );
 };
