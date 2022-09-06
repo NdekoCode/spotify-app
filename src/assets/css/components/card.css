@@ -1,0 +1,10 @@
+.card-track {
+  padding: 16px;
+  isolation: isolate;
+  position: relative;
+  min-height: 300px;
+  min-width: 220px;
+}
+.card-track:hover {
+  color: #fff;
+}

@@ -1,0 +1,123 @@
+:root {
+  --time-sm: 0.55s;
+  --fadeUp: fadeUp var(--time-sm) forwards;
+}
+.cards-container {
+  width: 100%;
+  margin: 0 auto;
+
+  min-height: 100vh;
+  height: auto;
+  padding: 50px;
+  font-family: Arial, "Segoe UI", Helvetica, sans-serif;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: center;
+  background: linear-gradient(to right, #434343, #212121);
+}
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  width: 100%;
+  gap: 1rem;
+  padding: 0 20px;
+  margin: 4rem auto 0;
+}
+.cards-grid .card {
+  background-color: #f1f1f1;
+}
+.card-title {
+  margin: 10px 0;
+}
+.card-text {
+  color: #4c4c4c;
+}
+.cards-grid .card-img {
+  display: block;
+  height: 200px;
+  width: 100%;
+  background-color: #4c4c4c;
+  object-fit: cover;
+}
+
+.card.is-loading :is(.card-img, *[class*="skeleton-"]) {
+  background-color: #4c4c4c;
+}
+.card-content {
+  padding: 15px 25px;
+}
+*.is-loading .skeleton-title {
+  min-height: 30px;
+}
+
+/* Tous les element qui ont dans leurs classe "skeleton-QuelQueChose" */
+*.is-loading *[class*="skeleton-"] {
+  margin-bottom: 10px;
+  background: linear-gradient(110deg, #414141 8%, #838383 18%, #414141 33%);
+  background-size: 200% 100%;
+  animation: Fadeskeleton 1.75s ease-in-out infinite alternate;
+}
+*.is-loading .skeleton-text {
+  max-width: 65%;
+  min-height: 15px;
+}
+*.is-loading .skeleton-text:first-of-type,
+.skeleton-text:last-of-type {
+  max-width: 90%;
+}
+*.is-loading .skeleton-text:last-of-type {
+  min-height: 20px;
+}
+*.is-loading img.skeleton-anim {
+  animation: Fadeskeleton 05s ease-in-out infinite alternate;
+}
+.fade-result {
+  background-color: #f1f1f1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.fade-result button {
+  background-color: #434343;
+  padding: 8px 12px;
+  border-radius: 5px;
+  color: #f1f1f1;
+}
+.refresh {
+  width: 100px;
+  height: 100px;
+}
+.card.loaded {
+  animation: fadeUp 0.35s forwards;
+}
+/* 
+   background: #eee;
+    background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+    background-size: 200% 100%;
+  */
+@keyframes Fadeskeleton {
+  /* L'element va passer de son opacité de 1 jusqu'à 0.6 */
+  to {
+    opacity: 0.6;
+    background-position-x: -200%;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
