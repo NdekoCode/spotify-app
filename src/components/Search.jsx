@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useState } from "react";
 import MusicContext from "../data/AppContext";
 import useFetch from "../data/hookFunc";
 
@@ -8,21 +8,31 @@ const Search = () => {
     searchUser,
     dataSongs,
     setDataSong,
+    isLoading,
     setIsLoading,
     setSearchUser,
   } = MusicContext();
+  const [input, setInput] = useState(searchUser);
   const url = `https://api.spotify.com/v1/search?q=${searchUser}&type=album,track,artist,playlist,show,episode&include_external=audio?limit=15`;
-  const [data, loading] = useFetch(url, dataSongs, setting.authorize_token);
-  const handleSubmit = useCallback((evt) => {
-    console.log("SUBMIT");
-    evt.preventDefault();
+  const [data, loading] = useFetch(
+    url,
+    dataSongs,
+    setting.authorize_token,
+    isLoading
+  );
 
-    setDataSong(data);
-    console.log(data);
-    setIsLoading(loading);
-  });
+  const handleSubmit = useCallback(
+    (evt) => {
+      evt.preventDefault();
+      setSearchUser(input);
+      setDataSong(data);
+      setIsLoading(loading);
+      console.log(loading);
+    },
+    [input, data, isLoading]
+  );
   const handleChange = useCallback(({ target }) => {
-    setSearchUser(target.value);
+    setInput(target.value);
   });
   return (
     <form className="flex items-center basis-1/2" onSubmit={handleSubmit}>
@@ -35,7 +45,7 @@ const Search = () => {
           id="simple-search"
           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg rounded-tr-none rounded-br-none focus:ring-blue-500 focus:border-blue-500 block w-full min-w-max p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 duration-300 outline-none border-r-0 border-r-none"
           placeholder="Search"
-          value={searchUser}
+          value={input}
           onChange={handleChange}
           required=""
         />

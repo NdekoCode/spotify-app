@@ -2,15 +2,14 @@ import React from "react";
 import Albums from "../pages/Albums";
 import Favoris from "../pages/Favoris";
 import Genres from "../pages/Genres";
-import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Tracks from "../pages/Tracks";
-import { Navigate } from "react-router-dom";
+import Dashboard from "../pages/Dashboard";
 
 const routes = [
   {
     path: "/",
-    element: <Home />,
+    element: <Dashboard />,
   },
   {
     path: "/login",
@@ -40,7 +39,7 @@ const routes = [
 export const asideLinks = [
   {
     path: "/",
-    name: "Home",
+    name: "Dashboard",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -128,31 +127,31 @@ export const asideLinks = [
 
 export const homeRoute = [
   {
+    path: "/",
+    name: "Premium",
+    icon: "",
+  },
+  {
+    path: "#",
+    name: "Help",
+    icon: "",
+  },
+
+  {
+    path: "https://www.spotify.com/cd-sw/download/",
+    name: "Download",
+    icon: "",
+  },
+
+  {
+    path: "/login",
+    name: "Sign Up",
+    icon: "",
+  },
+
+  {
     path: "/login",
     name: "Login",
-    icon: "",
-  },
-  {
-    path: "albums",
-    name: "Album",
-    icon: "",
-  },
-
-  {
-    path: "tracks",
-    name: "Tracks",
-    icon: "",
-  },
-
-  {
-    path: "genres",
-    name: "Genres",
-    icon: "",
-  },
-
-  {
-    path: "favorites",
-    name: "Favorite Tracks",
     icon: "",
   },
 ];

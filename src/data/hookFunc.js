@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function useFetch(url, data, token) {
+export default function useFetch(url, data, token, loading = true) {
   // On initialise l'Etat du des données à charger en AJAX
   const [state, setState] = useState({
     items: [],
@@ -24,8 +24,12 @@ export default function useFetch(url, data, token) {
           items: Object.assign(state.items, data),
           loading: false,
         }));
+        loading = state.loading;
+      } else {
+        setState((state) => ({ ...state, loading: false }));
+        loading = state.loading;
       }
     })();
-  }, [data, url]);
-  return [state.items, state.loading];
+  }, [data, url, loading]);
+  return [state.items, loading];
 }

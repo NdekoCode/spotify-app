@@ -3,8 +3,7 @@ import MusicContext from "../data/AppContext";
 import ModalPlayer from "./ModalPlayer";
 
 const CardSong = ({ id, album, name, artists }) => {
-  const { showFrame, handleFrame, setShowFrame, idSong, setIdSong } =
-    MusicContext();
+  const { handleFrame, setShowFrame, setIdSong } = MusicContext();
   const showPlayer = useCallback(() => {
     setIdSong(id);
     handleFrame();
@@ -66,7 +65,6 @@ const CardSong = ({ id, album, name, artists }) => {
         <h3 className="text-gray-600 text-lg">{name}</h3>
         <p className="text-gray-400">{artists[0].name}</p>
       </div>
-      <ModalPlayer id={idSong} visibility={showFrame} />
     </div>
   );
 };

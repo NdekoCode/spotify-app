@@ -1,6 +1,6 @@
-import React from "react";
+import React, { memo } from "react";
 
-const ModalPlayer = ({ id, visibility }) => {
+const ModalPlayer = memo(({ id, visibility }) => {
   if (visibility) {
     return (
       <div className="modal">
@@ -12,7 +12,7 @@ const ModalPlayer = ({ id, visibility }) => {
           width="100%"
           height={380}
           frameBorder="0"
-          allowfullscreen=""
+          allowFullScreen=""
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
           loading="lazy"
         ></iframe>
@@ -20,6 +20,6 @@ const ModalPlayer = ({ id, visibility }) => {
     );
   }
   return null;
-};
+});
 
 export default ModalPlayer;

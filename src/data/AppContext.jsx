@@ -1,7 +1,7 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, memo, useContext, useState } from "react";
 
 const AppContext = createContext();
-export const ContextProvider = ({ children }) => {
+export const ContextProvider = memo(({ children }) => {
   const [setting, setSetting] = useState({
     main_url: "https://api.spotify.com/v1",
     token: "",
@@ -21,7 +21,7 @@ export const ContextProvider = ({ children }) => {
     tracks: {},
     playlists: {},
   });
-
+  console.log("hey");
   const value = {
     setting,
     setSetting,
@@ -39,7 +39,8 @@ export const ContextProvider = ({ children }) => {
     searchUser,
     setSearchUser,
   };
+
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
-};
+});
 const MusicContext = () => useContext(AppContext);
 export default MusicContext;

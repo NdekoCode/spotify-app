@@ -1,7 +1,7 @@
 import React from "react";
 
 const Tracks = () => {
-  return <div></div>;
+  return <div>Tracks</div>;
 };
 
 export default Tracks;
