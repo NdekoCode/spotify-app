@@ -17,8 +17,8 @@ const CardTrack = ({ track }) => {
       <div className="group relative h-60 flex flex-col items-center ">
         <img
           className="block rounded-full h-40 w-40 shadow-2xl"
-          src="https://images.unsplash.com/photo-1576863514292-542ef379c13b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80"
-          alt="Image"
+          src={album.images[0].url}
+          alt={name}
         />
         <div className="absolute h-40 w-40 bg-gray-800 bg-opacity-0 group-hover:bg-opacity-60 flex items-center rounded-full group-hover:opacity-100 transition duration-300 justify-evenly">
           <button
