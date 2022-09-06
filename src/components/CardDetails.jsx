@@ -10,7 +10,6 @@ const CardDetails = ({ artists, images, name, total_tracks, release_date }) => {
             <img
               className="rounded-3xl shadow-lg object-cover"
               src={images[0].url}
-              height={images[0].height}
               alt=""
             />
           </div>

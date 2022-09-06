@@ -8,7 +8,7 @@ import Dashboard from "../pages/Dashboard";
 
 const routes = [
   {
-    path: "/",
+    path: "/dashboard",
     element: <Dashboard />,
   },
   {
@@ -132,7 +132,7 @@ export const homeRoute = [
     icon: "",
   },
   {
-    path: "#",
+    path: "/help",
     name: "Help",
     icon: "",
   },
