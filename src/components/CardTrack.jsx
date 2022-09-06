@@ -1,9 +1,9 @@
 import React from "react";
 
-const CardTrack = () => {
+const CardTrack = ({ trackItems }) => {
   return (
-    <div className="card-track ounded-2xl bg-white shadow-lg cursor-pointer min-w-max">
-      <div className="group relative h-60 flex flex-col items-center justify-center">
+    <div className="card-track ounded-2xl bg-white dark:bg-gray-700 shadow-lg cursor-pointer min-w-max">
+      <div className="group relative h-60 flex flex-col items-center ">
         <img
           className="block rounded-full h-40 w-40 shadow-2xl"
           src="https://images.unsplash.com/photo-1576863514292-542ef379c13b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80"
@@ -28,8 +28,10 @@ const CardTrack = () => {
         </div>
       </div>
       <div className="p-1">
-        <h3 className="text-gray-600 text-lg font-semibold">Artist</h3>
-        <p className="text-gray-400">Description</p>
+        <h3 className="text-gray-600 dark:text-white text-lg font-semibold">
+          Artist
+        </h3>
+        <p className="text-gray-400 dark:text-gray-200">Description</p>
       </div>
     </div>
   );

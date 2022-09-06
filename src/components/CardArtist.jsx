@@ -6,7 +6,7 @@ const CardArtist = () => {
       <div className="relative mb-6">
         <img
           className="w-full"
-          src="https://images.unsplash.com/photo-1662318535485-8ad6ca64ee6f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+          src="https://images.unsplash.com/photo-1576863514292-542ef379c13b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80"
           alt="Profile picture"
         />
         <div

@@ -7,6 +7,7 @@ const Dashboard = lazy(() => import("../pages/Dashboard"));
 const Login = lazy(() => import("../pages/Login"));
 const Tracks = lazy(() => import("../pages/Tracks"));
 const Home = lazy(() => import("../pages/Home"));
+const Artists = lazy(() => import("../pages/Artists"));
 
 const routes = [
   {
@@ -51,6 +52,14 @@ const routes = [
     ),
   },
 
+  {
+    path: "/artists",
+    element: (
+      <Suspense fallback={<LoadingPage />}>
+        <Artists />
+      </Suspense>
+    ),
+  },
   {
     path: "/genres",
     element: (
@@ -107,6 +116,23 @@ export const asideLinks = [
   {
     path: "/tracks",
     name: "Tracks",
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        className="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+      >
+        <g data-name="35.Music">
+          <path d="M12 24a12 12 0 1 1 12-12 12.013 12.013 0 0 1-12 12zm0-22a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2z" />
+          <path d="M10 18a3 3 0 1 1 3-3 3 3 0 0 1-3 3zm0-4a1 1 0 1 0 1 1 1 1 0 0 0-1-1z" />
+          <path d="M13 15h-2V4.719l1.243.311C12.437 5.079 17 6.262 17 10h-2a3.1 3.1 0 0 0-2-2.542z" />
+        </g>
+      </svg>
+    ),
+  },
+  {
+    path: "/artists",
+    name: "Artists",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"

@@ -4,7 +4,6 @@ import MusicContext from "../data/AppContext";
 
 const Albums = () => {
   const { dataSongs } = MusicContext();
-  console.log("Data ", dataSongs);
   const { albums } = dataSongs;
   let albumItems = albums.items;
   console.log(albumItems);
