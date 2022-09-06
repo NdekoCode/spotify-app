@@ -1,4 +1,5 @@
 import React, { lazy, Suspense } from "react";
+import LoadingPage from "../components/LoadingPage";
 const Albums = lazy(() => import("../pages/Albums"));
 const Favoris = lazy(() => import("../pages/Favoris"));
 const Genres = lazy(() => import("../pages/Genres"));
@@ -17,38 +18,62 @@ const Home = lazy(() => import("../pages/Home"));
 const routes = [
   {
     path: "/",
-    element: <Home />,
+    element: (
+      <Suspense fallback={<LoadingPage />}>
+        <Home />
+      </Suspense>
+    ),
   },
   {
     path: "/dashboard",
-    element: <Dashboard />,
+    element: (
+      <Suspense fallback={<LoadingPage />}>
+        <Dashboard />
+      </Suspense>
+    ),
   },
   {
     path: "/login",
     element: (
-      <Suspense fallback={"TEXT"}>
+      <Suspense fallback={<LoadingPage />}>
         <Login />
       </Suspense>
     ),
   },
   {
     path: "albums",
-    element: <Albums />,
+    element: (
+      <Suspense fallback={<LoadingPage />}>
+        <Albums />
+      </Suspense>
+    ),
   },
 
   {
     path: "tracks",
-    element: <Tracks />,
+    element: (
+      <Suspense fallback={<LoadingPage />}>
+        <Tracks />
+      </Suspense>
+    ),
   },
 
   {
     path: "genres",
-    element: <Genres />,
+    element: (
+      <Suspense fallback={<LoadingPage />}>
+        <Genres />
+      </Suspense>
+    ),
   },
 
   {
     path: "favorites",
-    element: <Favoris />,
+    element: (
+      <Suspense fallback={<LoadingPage />}>
+        <Favoris />
+      </Suspense>
+    ),
   },
 ];
 
