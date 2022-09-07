@@ -122,6 +122,9 @@
   color: rgba(29, 185, 84, var(--tw-text-opacity));
   transition: 0.35s;
 }
+.spotify-card {
+  transition: 0.35s;
+}
 
 .spotify-card:hover {
   background-color: rgba(9, 9, 9, 0.9);
