@@ -1,4 +1,4 @@
-import { createContext, memo, useContext, useState } from "react";
+import { createContext, memo, useContext, useMemo, useState } from "react";
 
 const AppContext = createContext();
 export const ContextProvider = memo(({ children }) => {
@@ -16,7 +16,19 @@ export const ContextProvider = memo(({ children }) => {
   const handleFrame = () => {
     setShowFrame(!showFrame);
   };
-  const [searchUser, setSearchUser] = useState("T.I");
+  const artistSearch = [
+    "T.I",
+    "Fally",
+    "Ferre Gola",
+    "Shako",
+    "Fouine",
+    "Chris Brown",
+    "RND",
+  ];
+  const index = parseInt(Math.random() * (artistSearch.length - 1));
+  let search = artistSearch[index];
+  console.log(index, search);
+  const [searchUser, setSearchUser] = useState(search || "Stray Dogs");
   const [dataSongs, setDataSong] = useState({
     artists: {},
     albums: {},

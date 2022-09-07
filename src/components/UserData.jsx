@@ -2,7 +2,7 @@ import React from "react";
 
 const UserData = () => {
   return (
-    <div className="flex justify-around md:justify-end pt-8 order-last md:order-first mb-20 md:mb-0">
+    <div className="flex justify-around md:justify-end order-last md:order-first mb-20 md:mb-0">
       <div className="flex items-center">
         <div className="flex items-center mr-4 text-gray-600 hover:text-gray-400 cursor-pointer">
           <svg

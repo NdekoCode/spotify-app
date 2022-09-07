@@ -30,7 +30,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 5;
+  z-index: 150;
   display: flex;
   align-items: flex-end;
 }
@@ -38,17 +38,11 @@
   height: 100%;
   display: flex;
 }
-.modal iframe #root {
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  background-color: rgba(0, 0, 0, 0.3);
-}
 .modal .hide {
   position: absolute;
   top: -20px;
   right: -40px;
-  z-index: 10;
+  z-index: 150;
   width: 40px;
   height: 40px;
   cursor: pointer;

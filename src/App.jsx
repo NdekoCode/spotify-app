@@ -6,6 +6,7 @@ import routes from "./routes/routes";
 import MusicContext from "./data/AppContext";
 import useFetch from "./data/hookFunc";
 import { CLIENT_ID, CLIENT_SECRET } from "./data/secureData";
+import { getTracks } from "./data/getData";
 
 function App() {
   const {
@@ -46,7 +47,6 @@ function App() {
   );
   setDataSong(data);
   setIsLoading(loading);
-
   return (
     <BrowserRouter>
       <Routes>

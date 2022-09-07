@@ -1,5 +1,6 @@
 import React, { useCallback } from "react";
 import MusicContext from "../data/AppContext";
+import artistImg from "../assets/img/artist.jpeg";
 
 const CardArtist = ({ artist }) => {
   const { followers, id, images, name, popularity, type } = artist;
@@ -19,7 +20,7 @@ const CardArtist = ({ artist }) => {
           <img
             className="w-full object-cover"
             height={image?.height}
-            src={image?.url}
+            src={image?.url ?? artistImg}
             alt="Profile picture"
           />
           <div
