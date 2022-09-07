@@ -23,7 +23,6 @@ export const ContextProvider = memo(({ children }) => {
     tracks: {},
     playlists: {},
   });
-  console.log("hey");
   const value = {
     setting,
     setSetting,

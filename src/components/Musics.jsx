@@ -22,20 +22,9 @@ const Musics = () => {
               To get you started
             </h2>
             <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-              {items.map(
-                (
-                  { id, album, artists, duration_ms, external_urls, name },
-                  index
-                ) => (
-                  <CardSong
-                    id={id}
-                    key={index}
-                    album={album}
-                    name={name}
-                    artists={artists}
-                  />
-                )
-              )}
+              {items.map((song, index) => (
+                <CardSong song={song} key={index} />
+              ))}
             </section>
             <AlbumsData albumItems={albumItems} />
             {/* <section className="grid grid-cols-1 lg:grid-cols-2  xl:grid-cols-2 gap-4">

@@ -4,7 +4,6 @@ import MusicContext from "../data/AppContext";
 const CardTrack = ({ track }) => {
   const { album, artists, name, id, type } = track;
 
-  console.log(track);
   const { handleFrame, setTypePlay, setShowFrame, setIdSong } = MusicContext();
   const showPlayer = useCallback(() => {
     setIdSong(id);

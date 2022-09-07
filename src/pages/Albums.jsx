@@ -6,7 +6,6 @@ const Albums = () => {
   const { dataSongs } = MusicContext();
   const { albums } = dataSongs;
   let albumItems = albums.items;
-  console.log(albumItems);
   return (
     <MusicApp>
       <AlbumsData albumItems={albumItems} />

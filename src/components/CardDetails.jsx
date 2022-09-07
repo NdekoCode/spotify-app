@@ -3,7 +3,6 @@ import MusicContext from "../data/AppContext";
 import { catString } from "../data/utilsFunc";
 
 const CardDetails = ({ album }) => {
-  console.log(album);
   const { artists, images, name, total_tracks, release_date, id, type } = album;
   const { handleFrame, setShowFrame, setTypePlay, setIdSong } = MusicContext();
   const showPlayer = useCallback(() => {
