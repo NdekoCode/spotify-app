@@ -12,7 +12,7 @@ const Search = () => {
     setIsLoading,
     setSearchUser,
   } = MusicContext();
-  const [input, setInput] = useState(searchUser);
+  const [input, setInput] = useState("");
   const url = `https://api.spotify.com/v1/search?q=${searchUser}&type=album,track,artist,playlist,show,episode&include_external=audio?limit=15`;
   const [data, loading] = useFetch(
     url,
@@ -27,15 +27,18 @@ const Search = () => {
       setSearchUser(input);
       setDataSong(data);
       setIsLoading(loading);
-      console.log(loading);
     },
     [input, data, isLoading]
   );
   const handleChange = useCallback(({ target }) => {
     setInput(target.value);
+    setSearchUser(target.value);
   });
   return (
-    <form className="flex items-center basis-1/2" onSubmit={handleSubmit}>
+    <form
+      className="flex items-center basis-full md:basis-1/2"
+      onSubmit={handleSubmit}
+    >
       <label htmlFor="simple-search" className="sr-only">
         Search
       </label>

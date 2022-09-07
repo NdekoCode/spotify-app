@@ -30,7 +30,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 5;
+  z-index: 150;
   display: flex;
   align-items: flex-end;
 }
@@ -38,18 +38,94 @@
   height: 100%;
   display: flex;
 }
-.modal iframe #root {
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  background-color: rgba(0, 0, 0, 0.3);
-}
 .modal .hide {
   position: absolute;
   top: -20px;
   right: -40px;
-  z-index: 10;
+  z-index: 150;
   width: 40px;
   height: 40px;
   cursor: pointer;
+}
+
+/* custom rounded classes */
+.rounded-xxl {
+  border-radius: 30px;
+}
+
+.rounded-t-xxl {
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+
+.rounded-b-xxl {
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+/* Range Input */
+
+.x-slider * {
+  width: 350px !important;
+}
+
+.x-slider input::-webkit-slider-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #636363;
+  border: 5px solid #24c55d;
+  box-shadow: 0px 0px 40px -4px rgba(0, 0, 0, 0.76);
+  transition: all 0.1s ease-in-out;
+  outline: none;
+  appearance: none;
+}
+
+.x-slider input::-webkit-slider-thumb:hover {
+  border-color: #1bb350;
+}
+
+/* Player Controls */
+.x-player-controls .play-pause {
+  transform: scale(3);
+}
+
+.x-player-controls .play-pause:hover {
+  transform: scale(3.1);
+}
+
+.x-player-controls .center-controls {
+  transform: scale(2.5);
+}
+
+.x-player-controls .center-controls:hover {
+  transform: scale(2.7);
+}
+
+.x-player-controls .side-controls {
+  transform: scale(1.8);
+}
+
+.x-player-controls .side-controls:hover {
+  transform: scale(2);
+}
+.bg-spotify {
+  --tw-bg-opacity: 1;
+  background-color: rgba(29, 185, 84, var(--tw-bg-opacity));
+  transition: 0.35s;
+}
+.bg-spotify:hover {
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+.text-spotify:hover {
+  --tw-text-opacity: 1;
+  color: rgba(29, 185, 84, var(--tw-text-opacity));
+  transition: 0.35s;
+}
+.spotify-card {
+  transition: 0.35s;
+}
+
+.spotify-card:hover {
+  background-color: rgba(9, 9, 9, 0.9);
 }

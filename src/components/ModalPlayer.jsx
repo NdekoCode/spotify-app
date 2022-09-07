@@ -7,14 +7,16 @@ const ModalPlayer = memo(({ id, visibility, type }) => {
   const hidePlayer = useCallback(() => {
     setShowFrame(false);
   });
-  console.log(url);
   if (visibility) {
     return (
       <div className="modal">
-        <div className="hide" onClick={hidePlayer}>
+        <div
+          className="hide text-gray-400 shadow-sm hover:shadow-gray-100"
+          onClick={hidePlayer}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="ionicon"
+            className="ionicon fill-current"
             viewBox="0 0 512 512"
           >
             <title>Close Circle</title>
@@ -22,15 +24,15 @@ const ModalPlayer = memo(({ id, visibility, type }) => {
               d="M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192 192-86 192-192z"
               fill="none"
               stroke="currentColor"
-              stroke-miterlimit="10"
-              stroke-width="32"
+              strokeLinecap={10}
+              strokeWidth={32}
             />
             <path
               fill="none"
               stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="32"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={32}
               d="M320 320L192 192M192 320l128-128"
             />
           </svg>

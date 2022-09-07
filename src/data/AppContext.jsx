@@ -1,4 +1,4 @@
-import { createContext, memo, useContext, useState } from "react";
+import { createContext, memo, useContext, useMemo, useState } from "react";
 
 const AppContext = createContext();
 export const ContextProvider = memo(({ children }) => {
@@ -16,14 +16,13 @@ export const ContextProvider = memo(({ children }) => {
   const handleFrame = () => {
     setShowFrame(!showFrame);
   };
-  const [searchUser, setSearchUser] = useState("T.I");
+  const [searchUser, setSearchUser] = useState("Fally");
   const [dataSongs, setDataSong] = useState({
     artists: {},
     albums: {},
     tracks: {},
     playlists: {},
   });
-  console.log("hey");
   const value = {
     setting,
     setSetting,
