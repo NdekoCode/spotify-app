@@ -114,6 +114,9 @@
   background-color: rgba(29, 185, 84, var(--tw-bg-opacity));
   transition: 0.35s;
 }
+.bg-spotify:hover {
+  color: rgba(255, 255, 255, 0.95) !important;
+}
 .text-spotify:hover {
   --tw-text-opacity: 1;
   color: rgba(29, 185, 84, var(--tw-text-opacity));

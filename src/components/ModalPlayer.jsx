@@ -10,7 +10,10 @@ const ModalPlayer = memo(({ id, visibility, type }) => {
   if (visibility) {
     return (
       <div className="modal">
-        <div className="hide text-gray-400" onClick={hidePlayer}>
+        <div
+          className="hide text-gray-400 shadow-sm hover:shadow-gray-100"
+          onClick={hidePlayer}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="ionicon fill-current"

@@ -35,7 +35,10 @@ const Search = () => {
     setSearchUser(target.value);
   });
   return (
-    <form className="flex items-center basis-1/2" onSubmit={handleSubmit}>
+    <form
+      className="flex items-center basis-full md:basis-1/2"
+      onSubmit={handleSubmit}
+    >
       <label htmlFor="simple-search" className="sr-only">
         Search
       </label>
