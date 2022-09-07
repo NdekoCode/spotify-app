@@ -16,19 +16,7 @@ export const ContextProvider = memo(({ children }) => {
   const handleFrame = () => {
     setShowFrame(!showFrame);
   };
-  const artistSearch = [
-    "T.I",
-    "Fally",
-    "Ferre Gola",
-    "Shako",
-    "Fouine",
-    "Chris Brown",
-    "RND",
-  ];
-  const index = parseInt(Math.random() * (artistSearch.length - 1));
-  let search = artistSearch[index];
-  console.log(index, search);
-  const [searchUser, setSearchUser] = useState(search || "Stray Dogs");
+  const [searchUser, setSearchUser] = useState("Fally");
   const [dataSongs, setDataSong] = useState({
     artists: {},
     albums: {},
