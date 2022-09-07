@@ -28,7 +28,6 @@ function getFetchData(url, token) {
   (async () => {
     const response = await fetch(url, params);
     const responseData = await response.json();
-    console.log(response);
     if (response.ok) {
       dataFetch = responseData;
       loadingFetch = false;
@@ -40,10 +39,8 @@ function getFetchData(url, token) {
 }
 export const getTracks = (token) => {
   let searchArtist = idArtist.slice(0, 1).join(",");
-  console.log(searchArtist);
   // `https://api.spotify.com/v1/recommendations?seed_artists=${searchArtist}&seed_genres=classic,country&seed_tracks=6CO4WFWJGcaU5IByGLUYUj,13BVU634EX7PqtRoKj0ZWZ&limit=15`;
   const urlTracksRecommandation = `https://api.spotify.com/v1/browse/new-releases`;
-  console.log(urlTracksRecommandation);
 
   const [dataTrack, loading] = getFetchData(urlTracksRecommandation, token);
   return [dataTrack, loading];
