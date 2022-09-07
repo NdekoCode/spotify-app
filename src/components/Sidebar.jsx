@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../assets/img/drc.svg";
 import { asideLinks } from "../routes/routes";
+import SidebarItem from "./SidebarItem";
 const Sidebar = () => {
   return (
     <>
@@ -14,16 +15,7 @@ const Sidebar = () => {
         </a>
         <ul className="lg:mt-16 lg:space-y-4 flex lg:flex-col justify-between h-auto">
           {asideLinks.map(({ path, name, icon }, index) => (
-            <li key={index}>
-              <NavLink
-                aria-current="page"
-                to={path}
-                className="lg:rounded-r-full flex justify-center lg:justify-start items-center sm:space-x-2 py-3 px-4 lg:px-6 lg:py-2 hover:bg-card hover:text-spotify w-1/5 lg:w-full text-spotify lg:bg-spotify lg:text-white"
-              >
-                <span>{icon}</span>
-                <span className="hidden sm:block">{name}</span>
-              </NavLink>
-            </li>
+            <SidebarItem path={path} name={name} icon={icon} key={index} />
           ))}
         </ul>
       </aside>

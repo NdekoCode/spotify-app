@@ -16,10 +16,8 @@ const CardArtist = ({ artist }) => {
     <>
       <div className="container mx-auto max-w-xs rounded-lg overflow-hidden shadow-lg my-2 bg-white">
         <div className="relative mb-6">
-          {JSON.stringify(image)}
           <img
-            className="w-full object-cover"
-            height={image?.height}
+            className="w-full object-cover h-96"
             src={image?.url ?? artistImg}
             alt="Profile picture"
           />

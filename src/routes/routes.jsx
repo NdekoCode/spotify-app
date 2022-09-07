@@ -2,7 +2,6 @@ import React, { lazy, Suspense } from "react";
 import LoadingPage from "../components/LoadingPage";
 const Albums = lazy(() => import("../pages/Albums"));
 const PlayList = lazy(() => import("../pages/PlayList"));
-const Genres = lazy(() => import("../pages/Genres"));
 const Dashboard = lazy(() => import("../pages/Dashboard"));
 const Login = lazy(() => import("../pages/Login"));
 const Tracks = lazy(() => import("../pages/Tracks"));
@@ -57,14 +56,6 @@ const routes = [
     element: (
       <Suspense fallback={<LoadingPage />}>
         <Artists />
-      </Suspense>
-    ),
-  },
-  {
-    path: "/genres",
-    element: (
-      <Suspense fallback={<LoadingPage />}>
-        <Genres />
       </Suspense>
     ),
   },
