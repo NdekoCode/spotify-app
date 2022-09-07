@@ -1,5 +1,4 @@
 import React, { memo } from "react";
-import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
 import MusicContext from "../data/AppContext";
 import ModalPlayer from "./ModalPlayer";
@@ -19,9 +18,9 @@ const MusicApp = memo(({ children }) => {
         <Sidebar />
         <div className="px-8 lg:ml-48 lg:px-20 lg:py-6 bg-black text-gray-100 min-h-screen overflow-hidden">
           <div className="flex flex-col">
-            <div className="flex items-center flex-row-reverse justify-between">
-              <Search />
+            <div className="flex  items-center flex-row-reverse justify-between">
               <UserData />
+              <Search />
             </div>
             <main className="py-8 md:pb-12">
               <div className="py-10">

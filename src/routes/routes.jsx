@@ -77,7 +77,7 @@ export const asideLinks = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="fill-current"
+        className="fill-current hover:shadow-sm hover:shadow-gray-100"
         viewBox="0 0 24 24"
         width={19}
       >
@@ -93,7 +93,7 @@ export const asideLinks = [
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width={19}
-        className="w-5 h-5 fill-current transition duration-75 group-hover:text-gray-900 dark:group-hover:text-white"
+        className="w-5 h-5 fill-current transition duration-75 hover:shadow-sm hover:shadow-gray-100 group-hover:text-gray-900 dark:group-hover:text-white"
         viewBox="0 0 512 512"
         fill="currentColor"
       >
@@ -110,7 +110,7 @@ export const asideLinks = [
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
-        className="w-5 h-5 transition duration-75 group-hover:text-gray-900 dark:group-hover:text-white"
+        className="w-5 h-5 hover:shadow-sm hover:shadow-gray-100 transition duration-75 group-hover:text-gray-900 dark:group-hover:text-white"
         fill="currentColor"
       >
         <g data-name="album music">
@@ -128,7 +128,7 @@ export const asideLinks = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="fill-current"
+        className="fill-current hover:shadow-sm hover:shadow-gray-100"
         viewBox="0 0 24 24"
         width={19}
       >
@@ -143,7 +143,7 @@ export const asideLinks = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="fill-current"
+        className="fill-current hover:shadow-sm hover:shadow-gray-100"
         viewBox="0 0 24 24"
         width={19}
       >
@@ -158,7 +158,7 @@ export const asideLinks = [
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="fill-current"
+        className="fill-current hover:shadow-sm hover:shadow-gray-100"
         viewBox="0 0 24 24"
         width={19}
       >

@@ -10,10 +10,10 @@ const ModalPlayer = memo(({ id, visibility, type }) => {
   if (visibility) {
     return (
       <div className="modal">
-        <div className="hide" onClick={hidePlayer}>
+        <div className="hide text-gray-400" onClick={hidePlayer}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="ionicon"
+            className="ionicon fill-current"
             viewBox="0 0 512 512"
           >
             <title>Close Circle</title>
