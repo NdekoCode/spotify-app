@@ -4,7 +4,6 @@ import artistImg from "../assets/img/artist.jpeg";
 
 const CardPlaylist = ({ playlist }) => {
   const { description, href, id, images, name, owner, type } = playlist;
-  console.log(owner);
   const { handleFrame, setTypePlay, setShowFrame, setIdSong } = MusicContext();
   const showPlayer = useCallback((evt) => {
     evt.preventDefault();

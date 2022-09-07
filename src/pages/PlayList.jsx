@@ -6,7 +6,6 @@ import MusicContext from "../data/AppContext";
 const PlayList = () => {
   const { dataSongs } = MusicContext();
   const { playlists } = dataSongs;
-  console.log(playlists);
   if (playlists !== undefined) {
     return (
       <MusicApp>
