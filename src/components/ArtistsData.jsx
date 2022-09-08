@@ -49,8 +49,8 @@ const ArtistsData = () => {
       return (
         <main className="grid place-items-center mt-5 p-5">
           <div>
-            <h2 className="title mx-5 text-4xl text-gray-800 font-black">
-              Suggest Artist
+            <h2 className="text-2xl heading text-center sm:text-left ">
+              Suggest Artists
             </h2>
             <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4  p-5">
               {artists.map((artist, index) => (

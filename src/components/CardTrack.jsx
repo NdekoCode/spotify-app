@@ -12,7 +12,7 @@ const CardTrack = ({ track }) => {
     setShowFrame(true);
   });
   return (
-    <div className="card-track ounded-2xl bg-white dark:bg-gray-700 shadow cursor-pointer min-w-max mb-3">
+    <div className="card-track ounded-2xl bg-gray-700 dark:bg-gray-700 shadow cursor-pointer min-w-max mb-3">
       <div className="group relative h-60 flex flex-col items-center ">
         <img
           className="block rounded-full h-40 w-40 shadow-2xl"
