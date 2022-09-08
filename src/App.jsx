@@ -10,7 +10,6 @@ import { CLIENT_ID, CLIENT_SECRET } from "./data/secureData";
 function App() {
   const [state, setState] = useState({
     artists: {},
-    albums: {},
     tracks: {},
     playlists: {},
   });
@@ -34,7 +33,6 @@ function App() {
     ","
   )}`;
   const urlPlaylist = "https://api.spotify.com/v1/browse/featured-playlists";
-  const urlAlbums = `https://api.spotify.com/v1/browse/new-releases`;
   const {
     setting,
     setSetting,
@@ -43,8 +41,6 @@ function App() {
     dataSongs,
     setDataSong,
     setIsLoading,
-    newAlbums,
-    setNewAlbums,
     newTracks,
     setNewTracks,
     newArtists,
@@ -74,13 +70,6 @@ function App() {
   }, [setSetting]);
 
   // const url = `https://api.spotify.com/v1/search?q=${searchUser}&type=album,track,artist,playlist,show,episode&include_external=audio?limit=15`;
-  const [albumsData, albumsLoading] = useFetch(
-    urlAlbums,
-    newAlbums,
-    setting.authorize_token
-  );
-  loading = albumsLoading;
-  setNewAlbums(albumsData);
   const [tracksData, tracksLoading] = useFetch(
     urlTracks,
     newTracks,
@@ -110,18 +99,12 @@ function App() {
   useEffect(() => {
     console.log(newTracks);
     setState({
-      tracks: newTracks?.tracks,
-      artists: newArtists?.artists,
-      albums: newAlbums?.albums,
-      playlists: newPlaylists?.playlists,
+      tracks: newTracks.tracks,
+      artists: newArtists.artists,
+      playlists: newPlaylists.playlists,
     });
     setIsLoading(loading);
-  }, [
-    newTracks?.tracks,
-    newArtists?.artists,
-    newAlbums?.albums,
-    newPlaylists?.playlists,
-  ]);
+  }, [newTracks.tracks, newArtists.artists, newPlaylists.playlists]);
   console.log(state);
   return (
     <BrowserRouter>
