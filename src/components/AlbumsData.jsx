@@ -21,7 +21,7 @@ const AlbumsData = () => {
       setAlbums(albumsData.albums);
       setDataSong((d) => ({ ...d, albums: albumsData.albums }));
     }
-  }, [albums, dataSongs, searchUser, albumsData.albums]);
+  }, [searchUser, albumsData.albums]);
 
   if (
     !albumsLoading ||

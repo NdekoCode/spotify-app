@@ -1,12 +1,11 @@
 import React, { useCallback, useState } from "react";
 import MusicContext from "../data/AppContext";
-import useFetch from "../data/hookFunc";
+import { findAndSetData } from "../data/getData";
 
 const Search = () => {
   const {
     setting,
     searchUser,
-    dataSongs,
     setDataSong,
     isLoading,
     setIsLoading,
@@ -14,25 +13,22 @@ const Search = () => {
   } = MusicContext();
   const [input, setInput] = useState("");
   const url = `https://api.spotify.com/v1/search?q=${searchUser}&type=album,track,artist,playlist,show,episode&include_external=audio?limit=15`;
-  const [data, loading] = useFetch(
-    url,
-    dataSongs,
-    setting.authorize_token,
-    isLoading
-  );
 
-  const handleSubmit = useCallback(
-    (evt) => {
-      evt.preventDefault();
-      setSearchUser(input);
-      setDataSong(data);
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+    setSearchUser(input.trim());
+    if (input.length > 0) {
+      const loading = findAndSetData(url, setting.authorize_token, setDataSong);
       setIsLoading(loading);
-    },
-    [input, data, isLoading]
-  );
+    }
+  };
   const handleChange = useCallback(({ target }) => {
-    setInput(target.value);
-    setSearchUser(target.value);
+    const value = target.value.trim();
+    setInput(value);
+    setSearchUser(value);
+    if (value.length > 0) {
+      findAndSetData(url, setting.authorize_token, setDataSong);
+    }
   });
   return (
     <form

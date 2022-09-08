@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const idArtist = [
+export const idArtist = [
   "4OBJLual30L7gRl5UkeRcT",
   "2dIgFjalVxs4ThymZ67YCE",
   "5VO5GFUAOEURtWW9oWvbcV",
@@ -14,7 +14,9 @@ const idArtist = [
   "7x3eTVPlBiPjXHn3qotY86",
   "7xNYY1Zkb1vks5m9ATlJok",
 ];
-export default function useGetFetchData(url, token, data = [], loading = true) {
+export default function fetchData(url, token) {
+  let data,
+    loading = true;
   const params = {
     method: "GET",
     headers: {
@@ -24,43 +26,22 @@ export default function useGetFetchData(url, token, data = [], loading = true) {
     },
   };
   // On met une fonction asynchrone que l'on va appeler plus tard pour executer les requetes
-  useEffect(() => {
-    (async () => {
-      const response = await fetch(url, params);
-      const responseData = await response.json();
-      if (response.ok) {
-        data = responseData;
-        loading = false;
-      } else {
-        loading = false;
-      }
-    })();
-  }, [url, data, loading, token]);
+  (async () => {
+    const response = await fetch(url, params);
+    const responseData = await response.json();
+    if (response.ok) {
+      data = responseData;
+      loading = false;
+    } else {
+      loading = false;
+    }
+  })();
   return [data, loading];
 }
-export const getTracks = (token, data = []) => {
-  let searchArtist = idArtist.slice(0, 1).join(",");
-  let loading = true;
-  // `https://api.spotify.com/v1/recommendations?seed_artists=${searchArtist}&seed_genres=classic,country&seed_tracks=6CO4WFWJGcaU5IByGLUYUj,13BVU634EX7PqtRoKj0ZWZ&limit=15`;
-  const urlTracksRecommandation = `https://api.spotify.com/v1/browse/new-releases`;
-
-  [data, loading] = useGetFetchData(urlTracksRecommandation, token);
-  return [data, loading];
-};
-export const getArtists = (token) => {
-  const urlArtists = `https://api.spotify.com/v1/artists?ids=${idArtist.join(
-    ","
-  )}`;
-  let dataArtists, loading;
-  useEffect(() => {
-    [dataArtists, loading] = useGetFetchData(urlArtists, token);
-  }, [dataArtists, loading, token]);
-
-  return [dataArtists, loading];
-};
-export const getPlaylist = (token) => {
-  const urlPlaylist = "https://api.spotify.com/v1/browse/featured-playlists";
-
-  const [dataPlaylist, loading] = useGetFetchData(urlPlaylist, token);
-  return [dataPlaylist, loading];
-};
+export function findAndSetData(url, token, setData) {
+  const [data, loading] = fetchData(url, token);
+  if (data !== undefined && data !== null) {
+    setData(data);
+  }
+  return loading;
+}

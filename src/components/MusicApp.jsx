@@ -43,13 +43,9 @@ const MusicApp = memo(({ children }) => {
                 <h2 className="text-2xl heading text-center sm:text-left ">
                   Your most favourite tracks of all time
                 </h2>
-                <CardTracksContainer />
-              </div>
-              <div className="mt-10 md:mt-20 w-centerull sm:justify-start">
-                <h2 className="text-2xl heading text-center sm:text-left ">
-                  Recently played tracks
-                </h2>
-                <TrackData />
+                <CardTracksContainer>
+                  <TrackData />
+                </CardTracksContainer>
               </div>
 
               <div className="mt-10 md:mt-20 w-centerull sm:justify-start">

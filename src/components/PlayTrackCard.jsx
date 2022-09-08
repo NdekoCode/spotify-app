@@ -1,6 +1,6 @@
 import React from "react";
 
-const PlayRecentTrackCard = () => {
+const PlayTrackCard = () => {
   return (
     <a href="/track/1IAzD1muglOxOcPbUHs70R">
       <div className="bg-card pb-1.5 mr-3 md:mr-6 mt-4 w-36 md:w-40 shadow-2xl rounded-sm transition-transform duration-200 transform hover:scale-105">
@@ -24,4 +24,4 @@ const PlayRecentTrackCard = () => {
   );
 };
 
-export default PlayRecentTrackCard;
+export default PlayTrackCard;
