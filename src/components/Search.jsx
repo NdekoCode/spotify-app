@@ -65,7 +65,7 @@ const Search = () => {
       </label>
       <div className="relative w-full flex items-center">
         <input
-          type="text"
+          type="search"
           id="simple-search"
           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg rounded-tr-none rounded-br-none focus:ring-blue-500 focus:border-blue-500 block w-full min-w-max p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 duration-300 outline-none border-r-0 border-r-none"
           placeholder="Search"

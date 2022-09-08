@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import CardDetails from "./CardDetails";
 import MusicContext from "../data/AppContext";
 import useFetch from "../data/hookFunc";
+import SkeletonData from "./SkeletonData";
 
 const AlbumsData = () => {
   const urlAlbums = `https://api.spotify.com/v1/browse/new-releases`;
@@ -75,14 +76,7 @@ const AlbumsData = () => {
   }
   return (
     <main className="grid place-items-center mt-5 p-5">
-      <div>
-        <h2 className="title text-4xl text-gray-800 font-black">
-          Suggest Albums
-        </h2>
-        <section className="grid grid-cols-1 lg:grid-cols-2  xl:grid-cols-2 gap-4">
-          Veuillez recharger la page
-        </section>
-      </div>
+      <SkeletonData />
     </main>
   );
 };

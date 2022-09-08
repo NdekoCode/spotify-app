@@ -3,6 +3,7 @@ import MusicContext from "../data/AppContext";
 import { idArtist } from "../data/getData";
 import useFetch from "../data/hookFunc";
 import CardTrack from "./CardTrack";
+import SkeletonData from "./SkeletonData";
 
 const SongsData = () => {
   let searchArtist = idArtist.slice(0, 1).join(",");
@@ -53,7 +54,7 @@ const SongsData = () => {
       </>
     );
   }
-  return <p>Veuillez recharger la page</p>;
+  return <SkeletonData />;
 };
 
 export default SongsData;

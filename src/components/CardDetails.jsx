@@ -14,7 +14,10 @@ const CardDetails = ({ album }) => {
   return (
     // <div className="bg-dark group py-4 sm:py-6 flex flex-col justify-center md:py-12">
     <div className="py-3 sm:max-w-xl sm:mx-auto ">
-      <div className=" hover:bg-gray-700 duration-300  bg-gray-800 shadow-lg border-gray-600 sm:max-h-80	 border rounded-lg sm:rounded-3xl p-5 md:p-8 flex flex-wrap sm:flex-nowrap space-x-8 sm:h-80">
+      <div
+        onClick={showPlayer}
+        className="cursor-pointer hover:bg-gray-700 duration-300  bg-gray-800 shadow-lg border-gray-600 sm:max-h-80	 border rounded-lg sm:rounded-3xl p-5 md:p-8 flex flex-wrap sm:flex-nowrap space-x-8 sm:h-80"
+      >
         <div className="sm:h-48  w-full sm:w-1/2">
           <img
             className="rounded-3xl shadow-lg object-cover"
@@ -22,7 +25,7 @@ const CardDetails = ({ album }) => {
             alt=""
           />
         </div>
-        <div className="flex flex-col w-full mt-5 sm:mt-0 sm:w-1/2 space-y-4 relative">
+        <div className="group flex flex-col w-full mt-5 sm:mt-0 sm:w-1/2 space-y-4 relative">
           <div className="flex justify-between items-start w-full sm:w-auto">
             <h2 className="text-lg md:text-3xl font-bold">
               {" "}

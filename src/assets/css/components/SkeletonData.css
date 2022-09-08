@@ -1,33 +1,3 @@
-:root {
-  --time-sm: 0.55s;
-  --fadeUp: fadeUp var(--time-sm) forwards;
-}
-.cards-container {
-  width: 100%;
-  margin: 0 auto;
-
-  min-height: 100vh;
-  height: auto;
-  padding: 50px;
-  font-family: Arial, "Segoe UI", Helvetica, sans-serif;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  align-items: center;
-  background: linear-gradient(to right, #434343, #212121);
-}
-.cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  width: 100%;
-  gap: 1rem;
-  padding: 0 20px;
-  margin: 4rem auto 0;
-}
-.cards-grid .card {
-  background-color: #f1f1f1;
-}
 .card-title {
   margin: 10px 0;
 }
@@ -41,9 +11,7 @@
   background-color: #4c4c4c;
   object-fit: cover;
 }
-.card.is-loading {
-  border: 1px solid #4c4c4c;
-}
+
 .card.is-loading :is(.card-img, *[class*="skeleton-"]) {
   background-color: #4c4c4c;
 }
