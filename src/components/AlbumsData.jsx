@@ -6,27 +6,34 @@ import useFetch from "../data/hookFunc";
 const AlbumsData = () => {
   const urlAlbums = `https://api.spotify.com/v1/browse/new-releases`;
   const [albums, setAlbums] = useState({});
-  const { dataSongs, searchUser, newAlbums, setDataSong, setting } =
-    MusicContext();
+  const {
+    dataSongs,
+    searchUser,
+    newAlbums,
+    setDataSong,
+    setting,
+    setIsLoading,
+    isLoading,
+  } = MusicContext();
   const [albumsData, albumsLoading] = useFetch(
     urlAlbums,
     newAlbums,
     setting.authorize_token
   );
   useEffect(() => {
-    if (searchUser.length > 0) {
+    setIsLoading(albumsLoading);
+    setAlbums(albumsData.albums);
+    setDataSong((d) => ({ ...d, albums: albumsData.albums }));
+    if (searchUser.length > 1) {
       const { albums } = dataSongs;
-      setAlbums(albums);
-    } else {
-      setAlbums(albumsData.albums);
-      setDataSong((d) => ({ ...d, albums: albumsData.albums }));
+      if (albums !== undefined) {
+        setAlbums(albums.items);
+        setDataSong((d) => ({ ...d, albums }));
+      }
     }
-  }, [searchUser, albumsData.albums]);
+  }, [searchUser, dataSongs.albums, albumsData.albums]);
 
-  if (
-    !albumsLoading ||
-    (albums !== undefined && Object.keys(albums).length > 0)
-  ) {
+  if (!isLoading && albums !== undefined && Object.keys(albums).length > 0) {
     console.log(albums);
     const { items } = albums;
 

@@ -9,8 +9,15 @@ const TrackData = () => {
 
   const urlTracks = `https://api.spotify.com/v1/recommendations?seed_artists=${searchArtist}&seed_genres=classic,country&seed_tracks=6CO4WFWJGcaU5IByGLUYUj,13BVU634EX7PqtRoKj0ZWZ&limit=15`;
   const [tracks, setTracks] = useState({});
-  const { dataSongs, setDataSong, searchUser, newTracks, isLoading, setting } =
-    MusicContext();
+  const {
+    dataSongs,
+    setDataSong,
+    searchUser,
+    newTracks,
+    isLoading,
+    setting,
+    setIsLoading,
+  } = MusicContext();
   const [tracksData, tracksLoading] = useFetch(
     urlTracks,
     newTracks,
@@ -18,19 +25,23 @@ const TrackData = () => {
     isLoading
   );
   useEffect(() => {
-    if (searchUser.length > 0) {
-      const { tracks } = dataSongs;
-      setTracks(tracks);
+    setIsLoading(tracksLoading);
+    if (searchUser.length > 1) {
+      let { tracks } = dataSongs;
+      if (tracks !== undefined) {
+        setTracks(tracks.items);
+        setDataSong((d) => ({ ...d, tracks }));
+        console.log("Search NON NUll", tracks);
+      }
+      console.log("Search NUll", tracks);
     } else {
       setTracks(tracksData.tracks);
       setDataSong((d) => ({ ...d, tracks: tracksData.tracks }));
+      console.log("No search", tracks);
     }
-  }, [searchUser, tracksData.tracks]);
+  }, [searchUser, dataSongs.tracks, tracksData.tracks]);
 
-  if (
-    !tracksLoading ||
-    (tracks !== undefined && Object.keys(tracks).length > 0)
-  ) {
+  if (!isLoading && tracks !== undefined && Object.keys(tracks).length > 0) {
     return (
       <>
         {tracks.map((song, index) => (

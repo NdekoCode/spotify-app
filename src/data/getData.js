@@ -42,6 +42,8 @@ export function findAndSetData(url, token, setData) {
   const [data, loading] = fetchData(url, token);
   if (data !== undefined && data !== null) {
     setData(data);
+    return [data, loading];
   }
-  return loading;
+
+  return [data, loading];
 }
