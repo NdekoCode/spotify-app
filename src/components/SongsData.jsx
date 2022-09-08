@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import MusicContext from "../data/AppContext";
 import { idArtist } from "../data/getData";
 import useFetch from "../data/hookFunc";
-import CardSong from "./CardSong";
+import CardTrack from "./CardTrack";
 
-const TrackData = () => {
+const SongsData = () => {
   let searchArtist = idArtist.slice(0, 1).join(",");
 
   const urlTracks = `https://api.spotify.com/v1/recommendations?seed_artists=${searchArtist}&seed_genres=classic,country&seed_tracks=6CO4WFWJGcaU5IByGLUYUj,13BVU634EX7PqtRoKj0ZWZ&limit=15`;
@@ -42,13 +42,18 @@ const TrackData = () => {
   if (!isLoading && tracks !== undefined && Object.keys(tracks).length > 0) {
     return (
       <>
-        {tracks.map((song, index) => (
-          <CardSong song={song} key={index} />
-        ))}
+        <h2 className="text-2xl heading text-center sm:text-left ">
+          Your most favourite tracks of all time
+        </h2>
+        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4  p-5">
+          {tracks.map((track, index) => (
+            <CardTrack key={index} track={track} />
+          ))}
+        </section>
       </>
     );
   }
   return <p>Veuillez recharger la page</p>;
 };
 
-export default TrackData;
+export default SongsData;

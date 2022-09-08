@@ -1,39 +1,60 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import MusicContext from "../data/AppContext";
-import useFetch from "../data/hookFunc";
+import { findAndSetData } from "../data/getData";
 
 const Search = () => {
   const {
     setting,
     searchUser,
-    dataSongs,
     setDataSong,
-    isLoading,
     setIsLoading,
+    isLoading,
     setSearchUser,
   } = MusicContext();
-  const [input, setInput] = useState("");
-  const url = `https://api.spotify.com/v1/search?q=${searchUser}&type=album,track,artist,playlist,show,episode&include_external=audio?limit=15`;
-  const [data, loading] = useFetch(
-    url,
-    dataSongs,
-    setting.authorize_token,
-    isLoading
-  );
-
-  const handleSubmit = useCallback(
-    (evt) => {
-      evt.preventDefault();
-      setSearchUser(input);
-      setDataSong(data);
-      setIsLoading(loading);
+  const [input, setInput] = useState(searchUser);
+  const params = {
+    method: "GET",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      Authorization: setting.authorize_token,
     },
-    [input, data, isLoading]
-  );
+  };
+  const url = `https://api.spotify.com/v1/search?q=${searchUser}&type=album,track,artist,playlist,show,episode&include_external=audio?limit=15`;
+  const searchData = () => {
+    console.log(url);
+    (async () => {
+      const response = await fetch(url, params);
+      const responseData = await response.json();
+      if (response.ok) {
+        setIsLoading(false);
+        setDataSong(responseData);
+      } else {
+        setIsLoading(false);
+      }
+    })();
+  };
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+    setSearchUser(input.trim());
+    if (input.length > 1 && searchUser.length > 1) {
+      searchData();
+    }
+  };
   const handleChange = useCallback(({ target }) => {
-    setInput(target.value);
-    setSearchUser(target.value);
+    const value = target.value.trim();
+    setInput(value);
+    setSearchUser(value);
+
+    if (input.length > 0 && searchUser.length > 0) {
+      searchData();
+    }
   });
+  useEffect(() => {
+    if (input.length > 0 && searchUser.length > 0) {
+      searchData();
+    }
+  }, [input, searchUser]);
   return (
     <form
       className="flex items-center basis-full md:basis-1/2"

@@ -6,18 +6,9 @@ import routes from "./routes/routes";
 import MusicContext from "./data/AppContext";
 import useFetch from "./data/hookFunc";
 import { CLIENT_ID, CLIENT_SECRET } from "./data/secureData";
-import { getTracks } from "./data/getData";
 
 function App() {
-  const {
-    setting,
-    setSetting,
-    searchUser,
-    isLoading,
-    dataSongs,
-    setDataSong,
-    setIsLoading,
-  } = MusicContext();
+  const { setSetting } = MusicContext();
   useEffect(() => {
     (async () => {
       const response = await fetch("https://accounts.spotify.com/api/token", {
@@ -38,15 +29,24 @@ function App() {
     })();
   }, [setSetting]);
 
-  const url = `https://api.spotify.com/v1/search?q=${searchUser}&type=album,track,artist,playlist,show,episode&include_external=audio?limit=15`;
-  const [data, loading] = useFetch(
-    url,
-    dataSongs,
-    setting.authorize_token,
-    isLoading
-  );
-  setDataSong(data);
-  setIsLoading(loading);
+  // const url = `https://api.spotify.com/v1/search?q=${searchUser}&type=album,track,artist,playlist,show,episode&include_external=audio?limit=15`;
+  // const [artistsData, artistsLoading] = useFetch(
+  //   urlArtists,
+  //   newArtists,
+  //   setting.authorize_token,
+  //   isLoading
+  // );
+  // setNewArtists(artistsData);
+
+  // loading = artistsLoading;
+  // const [playlistsData, playlistsLoading] = useFetch(
+  //   urlPlaylist,
+  //   newPlaylists,
+  //   setting.authorize_token,
+  //   isLoading
+  // );
+  // setNewPlaylists(playlistsData);
+
   return (
     <BrowserRouter>
       <Routes>

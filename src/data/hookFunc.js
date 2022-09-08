@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 
-export default function useFetch(url, data, token, loading = true) {
+export default function useFetch(url, data, token) {
   // On initialise l'Etat du des données à charger en AJAX
   const [state, setState] = useState({
     items: [],
     loading: true,
   });
-  const params = {
+  let params = {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -24,12 +24,10 @@ export default function useFetch(url, data, token, loading = true) {
           items: Object.assign(state.items, data),
           loading: false,
         }));
-        loading = state.loading;
       } else {
         setState((state) => ({ ...state, loading: false }));
-        loading = state.loading;
       }
     })();
-  }, [data, url, loading]);
-  return [state.items, loading];
+  }, [state.items, url, state.loading, token]);
+  return [state.items, state.loading];
 }
