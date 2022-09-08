@@ -7,13 +7,8 @@ const Musics = () => {
   if (dataSongs !== null) {
     const { albums, artists, playlists, tracks } = dataSongs;
 
-    if (
-      tracks !== null &&
-      tracks !== undefined &&
-      Object.keys(tracks).length > 0
-    ) {
+    if (tracks !== undefined && Object.keys(tracks).length > 0) {
       let { items } = tracks;
-      let albumItems = albums.items;
       return (
         <main className="grid place-items-center mt-5 p-5">
           <div>
@@ -25,7 +20,7 @@ const Musics = () => {
                 <CardSong song={song} key={index} />
               ))}
             </section>
-            <AlbumsData albumItems={albumItems} />
+            <AlbumsData />
             {/* <section className="grid grid-cols-1 lg:grid-cols-2  xl:grid-cols-2 gap-4">
               {albumItems.map(
                 (

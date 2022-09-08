@@ -16,7 +16,7 @@ export const ContextProvider = memo(({ children }) => {
   const handleFrame = () => {
     setShowFrame(!showFrame);
   };
-  const [searchUser, setSearchUser] = useState("Fally");
+  const [searchUser, setSearchUser] = useState("");
   const [newAlbums, setNewAlbums] = useState({});
   const [newTracks, setNewTracks] = useState({});
   const [newArtists, setNewArtists] = useState({});
