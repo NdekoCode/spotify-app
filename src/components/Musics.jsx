@@ -13,8 +13,7 @@ const Musics = () => {
       Object.keys(tracks).length > 0
     ) {
       let { items } = tracks;
-      items = items.slice(0, 15);
-      let albumItems = albums.items.slice(0, 12);
+      let albumItems = albums.items;
       return (
         <main className="grid place-items-center mt-5 p-5">
           <div>

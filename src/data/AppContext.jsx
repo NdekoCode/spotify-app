@@ -17,6 +17,10 @@ export const ContextProvider = memo(({ children }) => {
     setShowFrame(!showFrame);
   };
   const [searchUser, setSearchUser] = useState("Fally");
+  const [newAlbums, setNewAlbums] = useState({});
+  const [newTracks, setNewTracks] = useState({});
+  const [newArtists, setNewArtists] = useState({});
+  const [newPlaylists, setNewPlaylists] = useState({});
   const [dataSongs, setDataSong] = useState({
     artists: {},
     albums: {},
@@ -43,6 +47,14 @@ export const ContextProvider = memo(({ children }) => {
     toggleMenu,
     typePlay,
     setTypePlay,
+    newAlbums,
+    setNewAlbums,
+    newTracks,
+    setNewTracks,
+    newArtists,
+    setNewArtists,
+    newPlaylists,
+    setNewPlaylists,
   };
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;

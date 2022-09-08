@@ -6,7 +6,7 @@ export default function useFetch(url, data, token, loading = true) {
     items: [],
     loading: true,
   });
-  const params = {
+  let params = {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -30,6 +30,6 @@ export default function useFetch(url, data, token, loading = true) {
         loading = state.loading;
       }
     })();
-  }, [data, url, loading]);
+  }, [data, url, loading, token]);
   return [state.items, loading];
 }
