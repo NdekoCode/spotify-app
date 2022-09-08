@@ -5,7 +5,7 @@ import NavbarHome from "../components/NavbarHome";
 export default function Home() {
   return (
     <main>
-      <div className="main-navigation">
+      <div className="">
         <div className="content">
           <NavbarHome />
           <Hero />

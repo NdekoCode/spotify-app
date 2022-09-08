@@ -2,21 +2,21 @@ import React from "react";
 const CardSkeleton = () => {
   return (
     <>
-      <div class="card is-loading">
-        <div class="card-img skeleton-anim"></div>
-        <div class="card-content">
-          <h3 class="title skeleton-title skelon-anim"></h3>
-          <p class="text skeleton-text skelon-anim"></p>
-          <p class="text skeleton-text skelon-anim"></p>
-          <p class="text skeleton-text skelon-anim"></p>
+      <div className="card is-loading">
+        <div className="card-img skeleton-anim"></div>
+        <div className="card-content">
+          <h3 className="title skeleton-title skelon-anim"></h3>
+          <p className="text skeleton-text skelon-anim"></p>
+          <p className="text skeleton-text skelon-anim"></p>
+          <p className="text skeleton-text skelon-anim"></p>
         </div>
       </div>
-      <div class="card is-loading">
-        <div class="card-img">
+      <div className="card is-loading">
+        <div className="card-img">
           <img />
         </div>
-        <div class="card-content">
-          <h2 class="title"></h2>
+        <div className="card-content">
+          <h2 className="title"></h2>
           <p></p>
         </div>
       </div>

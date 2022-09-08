@@ -77,11 +77,8 @@ const ArtistsData = () => {
       </main>
     );
   }
-  return (
-    <main className="grid place-items-center mt-5 p-5">
-      <SkeletonData />
-    </main>
-  );
+
+  return <SkeletonData />;
 };
 
 export default ArtistsData;

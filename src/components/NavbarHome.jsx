@@ -62,7 +62,7 @@ const NavbarHome = () => {
                 <line x1={6} y1={6} x2={18} y2={18} />
               </svg>
             </button>
-            <ul className="flex text-3xl md:text-base items-center py-10 md:flex flex-col md:flex-row justify-center fixed md:relative top-0 bottom-0 left-0 right-0 bg-white md:bg-transparent z-20">
+            <ul className="w-full flex text-3xl md:text-base items-center py-10 md:flex flex-col md:flex-row justify-center fixed md:relative top-0 bottom-0 left-0 right-0 bg-white md:bg-transparent z-20">
               {homeRoute.map(({ path, name }, index) => (
                 <li
                   key={index}
@@ -74,7 +74,7 @@ const NavbarHome = () => {
                       nav.isActive
                         ? `bg-blue-700 md:bg-transparent md:text-blue-700 dark:text-white`
                         : "" +
-                          `block py-2 pr-4 mx-3 pl-3 text-gray-700 rounded   hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent `
+                          `block py-2 pr-4 mx-5 pl-3 text-gray-700 rounded   hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent `
                     }
                     aria-current="page"
                   >

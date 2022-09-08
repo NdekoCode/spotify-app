@@ -180,17 +180,6 @@ export const homeRoute = [
     name: "Premium",
     icon: "",
   },
-  {
-    path: "/help",
-    name: "Help",
-    icon: "",
-  },
-
-  {
-    path: "/https://www.spotify.com/cd-sw/download/",
-    name: "Download",
-    icon: "",
-  },
 
   {
     path: "/login",
