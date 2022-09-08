@@ -1,6 +1,7 @@
 import React, { useCallback } from "react";
 import MusicContext from "../data/AppContext";
 import artistImg from "../assets/img/artist.jpeg";
+import { catString } from "../data/utilsFunc";
 
 const CardPlaylist = ({ playlist }) => {
   const { description, href, id, images, name, owner, type } = playlist;
@@ -27,7 +28,9 @@ const CardPlaylist = ({ playlist }) => {
       {/* Title */}
       <h3 className="text-gray-200 font-bold mt-5"> {name}</h3>
       {/* Description */}
-      <p className="text-gray-400 font-light mt-2 text-xs">{description}</p>
+      <p className="text-gray-400 font-light mt-2 text-xs">
+        {catString(description, 90)}
+      </p>
       <p className="text-gray-200 mt-2">
         Créer par :
         <strong className=" font-medium "> {owner.display_name}</strong>
