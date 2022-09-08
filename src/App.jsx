@@ -9,9 +9,6 @@ import { CLIENT_ID, CLIENT_SECRET } from "./data/secureData";
 import { idArtist } from "./data/getData";
 
 function App() {
-  const urlArtists = `https://api.spotify.com/v1/artists?ids=${idArtist.join(
-    ","
-  )}`;
   const urlPlaylist = "https://api.spotify.com/v1/browse/featured-playlists";
   const { setSetting } = MusicContext();
   useEffect(() => {
