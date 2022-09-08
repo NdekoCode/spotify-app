@@ -31,13 +31,11 @@ const TrackData = () => {
       if (tracks !== undefined) {
         setTracks(tracks.items);
         setDataSong((d) => ({ ...d, tracks }));
-        console.log("Search NON NUll", tracks);
       }
-      console.log("Search NUll", tracks);
     } else {
       setTracks(tracksData.tracks);
       setDataSong((d) => ({ ...d, tracks: tracksData.tracks }));
-      console.log("No search", tracks);
+      // console.log("No search", tracks);
     }
   }, [searchUser, dataSongs.tracks, tracksData.tracks]);
 

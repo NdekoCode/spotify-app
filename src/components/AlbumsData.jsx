@@ -8,34 +8,55 @@ const AlbumsData = () => {
   const [albums, setAlbums] = useState({});
   const {
     dataSongs,
+    setDataSong,
     searchUser,
     newAlbums,
-    setDataSong,
+    isLoading,
     setting,
     setIsLoading,
-    isLoading,
   } = MusicContext();
   const [albumsData, albumsLoading] = useFetch(
     urlAlbums,
     newAlbums,
-    setting.authorize_token
+    setting.authorize_token,
+    isLoading
   );
   useEffect(() => {
     setIsLoading(albumsLoading);
-    setAlbums(albumsData.albums);
-    setDataSong((d) => ({ ...d, albums: albumsData.albums }));
+
     if (searchUser.length > 1) {
-      const { albums } = dataSongs;
+      let { albums } = dataSongs;
       if (albums !== undefined) {
         setAlbums(albums.items);
         setDataSong((d) => ({ ...d, albums }));
+        console.log("DOnnées avec la recherche", albums);
       }
+    } else {
+      setAlbums(albumsData.albums);
+      setDataSong((d) => ({ ...d, albums: albumsData.albums }));
+      console.log("DOnnées sans search", albums);
     }
   }, [searchUser, dataSongs.albums, albumsData.albums]);
 
   if (!isLoading && albums !== undefined && Object.keys(albums).length > 0) {
-    console.log(albums);
+    console.log("Data loaded ", albums);
     const { items } = albums;
+    if (items !== undefined) {
+      return (
+        <main className="grid place-items-center mt-5 p-5">
+          <div>
+            <h2 className="title text-4xl text-gray-800 font-black">
+              Suggest Albums
+            </h2>
+            <section className="grid grid-cols-1 lg:grid-cols-2  xl:grid-cols-2 gap-4">
+              {items.map((album, index) => (
+                <CardDetails album={album} key={index} />
+              ))}
+            </section>
+          </div>
+        </main>
+      );
+    }
 
     return (
       <main className="grid place-items-center mt-5 p-5">
@@ -44,7 +65,7 @@ const AlbumsData = () => {
             Suggest Albums
           </h2>
           <section className="grid grid-cols-1 lg:grid-cols-2  xl:grid-cols-2 gap-4">
-            {items.map((album, index) => (
+            {albums.map((album, index) => (
               <CardDetails album={album} key={index} />
             ))}
           </section>
