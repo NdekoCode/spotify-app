@@ -13,7 +13,7 @@ const CardArtist = ({ artist }) => {
   });
   const image = images[0];
   return (
-    <div className="container mx-auto max-w-xs rounded-lg overflow-hidden shadow-lg my-2 bg-white">
+    <div className="container mx-auto w-full max-w-xs rounded-lg overflow-hidden shadow-lg my-2 bg-white">
       <div className="relative mb-6">
         <img
           className="w-full object-cover h-96"
