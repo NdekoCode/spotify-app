@@ -1,6 +1,6 @@
-import AlbumsData from "./AlbumsData";
-import CardTracksContainer from "./CardTracksContainer";
-import TrackData from "./TrackData";
+import AlbumsData from './AlbumsData';
+import CardTracksContainer from './CardTracksContainer';
+import TrackData from './TrackData';
 // import TrackData from "./TrackDataTable";
 
 const Musics = () => {

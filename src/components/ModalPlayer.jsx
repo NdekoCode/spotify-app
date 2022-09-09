@@ -1,5 +1,5 @@
-import React, { memo, useCallback } from "react";
-import MusicContext from "../data/AppContext";
+import React, { memo, useCallback } from 'react';
+import MusicContext from '../data/AppContext';
 
 const ModalPlayer = memo(({ id, visibility, type }) => {
   const url = `https://open.spotify.com/embed/${type}/${id}?utm_source=generator`;

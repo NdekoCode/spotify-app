@@ -1,11 +1,13 @@
-import React, { useEffect } from "react";
+import React, { useEffect } from 'react';
 // On a installer ce paquer pour pouvoir traduire le token que nous renvois google quand on clique sur ce boutton
-import jwt_decode from "jwt-decode";
-import { setDataStorage } from "../data/utilsFunc";
-import MusicContext from "../data/AppContext";
-import { useNavigate } from "react-router-dom";
-const GoogleAuthButton = () => {
-  const { setUserIsConnect, userData, setUserData } = MusicContext();
+// eslint-disable-next-line camelcase
+import jwt_decode from 'jwt-decode';
+import { useNavigate } from 'react-router-dom';
+import { setDataStorage } from '../data/utilsFunc';
+import MusicContext from '../data/AppContext';
+
+function GoogleAuthButton() {
+  const { setUserIsConnect, setUserData } = MusicContext();
   const navigate = useNavigate();
   function handleCallbackResponse(response) {
     /* La reponse que va nous renvoyer google quand on va cliquer sur le boutton "Se connecter avec google" */
@@ -15,25 +17,26 @@ const GoogleAuthButton = () => {
       username: userObject?.name,
       image: userObject?.picture,
     };
-    setDataStorage("userData", userData);
+    setDataStorage('userData', userData);
     setUserData(userData);
     setUserIsConnect(true);
-    navigate("/dashboard");
+    navigate('/dashboard');
   }
   useEffect(() => {
     /* global google */
     google.accounts.id.initialize({
       client_id:
-        "323982794177-sl6onc3ihvf0ahafap36enhcjrlqnkpb.apps.googleusercontent.com",
+        '323982794177-sl6onc3ihvf0ahafap36enhcjrlqnkpb.apps.googleusercontent.com',
       callback: handleCallbackResponse,
     });
-    google.accounts.id.renderButton(document.getElementById("googleButton"), {
-      theme: "outline",
-      size: "large",
+    google.accounts.id.renderButton(document.getElementById('googleButton'), {
+      theme: 'outline',
+      size: 'large',
     });
   }, []);
   return (
     <div className="flex justify-center">
+      {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
       <a
         href="#"
         id="googleButton"
@@ -65,6 +68,6 @@ const GoogleAuthButton = () => {
       </a>
     </div>
   );
-};
+}
 
 export default GoogleAuthButton;

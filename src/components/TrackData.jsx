@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
-import MusicContext from "../data/AppContext";
-import { idArtist } from "../data/getData";
-import useFetch from "../data/hookFunc";
-import CardSong from "./CardSong";
-import SkeletonData from "./SkeletonData";
+import React, { useEffect, useState } from 'react';
+import MusicContext from '../data/AppContext';
+import { idArtist } from '../data/getData';
+import useFetch from '../data/hookFunc';
+import CardSong from './CardSong';
+import SkeletonData from './SkeletonData';
 
 const TrackData = () => {
-  let searchArtist = idArtist.slice(0, 1).join(",");
+  let searchArtist = idArtist.slice(0, 1).join(',');
 
   const urlTracks = `https://api.spotify.com/v1/recommendations?seed_artists=${searchArtist}&seed_genres=classic,country&seed_tracks=6CO4WFWJGcaU5IByGLUYUj,13BVU634EX7PqtRoKj0ZWZ&limit=15`;
   const [tracks, setTracks] = useState({});
@@ -23,7 +23,7 @@ const TrackData = () => {
     urlTracks,
     newTracks,
     setting.authorize_token,
-    isLoading
+    isLoading,
   );
   useEffect(() => {
     setIsLoading(tracksLoading);

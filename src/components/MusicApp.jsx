@@ -1,21 +1,21 @@
-import React, { memo, useEffect } from "react";
-import Sidebar from "./Sidebar";
-import MusicContext from "../data/AppContext";
-import ModalPlayer from "./ModalPlayer";
-import UserData from "./UserData";
-import GreetUser from "./GreetUser";
-import Search from "./Search";
-import { useNavigate } from "react-router-dom";
-import { getDataStorage } from "../data/utilsFunc";
+import React, { memo, useEffect } from 'react';
+import Sidebar from './Sidebar';
+import MusicContext from '../data/AppContext';
+import ModalPlayer from './ModalPlayer';
+import UserData from './UserData';
+import GreetUser from './GreetUser';
+import Search from './Search';
+import { useNavigate } from 'react-router-dom';
+import { getDataStorage } from '../data/utilsFunc';
 
 const MusicApp = memo(({ children }) => {
   const { idSong, userIsConnect, showFrame, typePlay } = MusicContext();
   const navigate = useNavigate();
-  const user = getDataStorage("userData");
+  const user = getDataStorage('userData');
   console.log(user);
   useEffect(() => {
     if (!userIsConnect) {
-      navigate("/login");
+      navigate('/login');
     }
   }, [userIsConnect]);
   return (

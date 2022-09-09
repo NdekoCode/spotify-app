@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const TrackView = () => {
   return (
@@ -44,7 +44,7 @@ const TrackView = () => {
               <canvas
                 height={400}
                 width={1205}
-                style={{ display: "block", width: 1205, height: 400 }}
+                style={{ display: 'block', width: 1205, height: 400 }}
                 className="chartjs-render-monitor"
               />
             </div>
@@ -53,7 +53,7 @@ const TrackView = () => {
               <div className=" mb-6">
                 <h3 className="text-gray-300">Danceability</h3>
                 <p className="text-gray-600">
-                  Danceability describes how suitable a track is for dancing.{" "}
+                  Danceability describes how suitable a track is for dancing.{' '}
                 </p>
               </div>
               <div className=" mb-6">
@@ -102,7 +102,7 @@ const TrackView = () => {
                 <p className="text-gray-600">
                   Speechiness detects the presence of spoken words in a track.
                   The more exclusively speech-like the recording (e.g. talk
-                  show, audio book, poetry), the higher the attribute value.{" "}
+                  show, audio book, poetry), the higher the attribute value.{' '}
                 </p>
               </div>
             </div>

@@ -1,6 +1,6 @@
-import React, { useCallback } from "react";
-import MusicContext from "../data/AppContext";
-import { disconnectedUser, verifyUserConnect } from "../data/utilsFunc";
+import React, { useCallback } from 'react';
+import MusicContext from '../data/AppContext';
+import { disconnectedUser, verifyUserConnect } from '../data/utilsFunc';
 
 const UserData = () => {
   const { userIsConnect, setUserIsConnect } = MusicContext();

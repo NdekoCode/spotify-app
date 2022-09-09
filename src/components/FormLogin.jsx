@@ -1,28 +1,28 @@
-import React, { useCallback, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import MusicContext from "../data/AppContext";
-import { setDataStorage, verifyUserConnect } from "../data/utilsFunc";
-import GoogleAuthButton from "./GoogleAuthButton";
+import React, { useCallback, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import MusicContext from '../data/AppContext';
+import { setDataStorage, verifyUserConnect } from '../data/utilsFunc';
+import GoogleAuthButton from './GoogleAuthButton';
 
-const FormLogin = () => {
+function FormLogin() {
   const navigate = useNavigate();
   const [userData, setUserData] = useState({
-    email: "",
-    password: "",
-    username: "",
+    email: '',
+    password: '',
+    username: '',
   });
   const { userIsConnect, setUserIsConnect } = MusicContext();
   const [stateForm, setStateForm] = useState({
     valid: false,
     connected: false,
-    messageAlert: "",
+    messageAlert: '',
   });
   const validDataLength = (value, el, dataLength) => {
     if (value.length < dataLength) {
-      el.style.borderColor = "red";
+      el.style.borderColor = 'red';
       setStateForm((data) => ({ ...data, valid: false }));
     } else {
-      el.style.borderColor = "transparent";
+      el.style.borderColor = 'transparent';
       setStateForm((data) => ({ ...data, valid: true }));
     }
   };
@@ -30,20 +30,20 @@ const FormLogin = () => {
     if (/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(target.value)) {
       return true;
     }
-    target.style.borderColor = "red";
+    target.style.borderColor = 'red';
     return false;
   };
   const handleChange = useCallback(({ target }) => {
-    const name = target.name;
-    const type = target.type;
+    const { name } = target;
+    const { type } = target;
     const value = target.value.trim();
     setUserData((data) => ({ ...data, [name]: value }));
     validDataLength(value, target, 3);
-    if (type === "password") {
+    if (type === 'password') {
       validDataLength(value, target, 8);
     }
 
-    if (type === "email") {
+    if (type === 'email') {
       setStateForm((data) => ({ ...data, valid: validEmail(target) }));
     }
   });
@@ -60,7 +60,7 @@ const FormLogin = () => {
       formData.email = userData.email;
       formData.password = userData.password;
       formData.username = userData.username;
-      setDataStorage("userData", userData);
+      setDataStorage('userData', userData);
       verifyUserConnect();
       setUserIsConnect(true);
       setStateForm((data) => ({
@@ -70,13 +70,13 @@ const FormLogin = () => {
     } else {
       setStateForm((data) => ({
         ...data,
-        messageAlert: "Les données entrer sont invalides",
+        messageAlert: 'Les données entrer sont invalides',
       }));
     }
   });
   useEffect(() => {
     if (verifyUserConnect()) {
-      navigate("/dashboard");
+      navigate('/dashboard');
     }
   }, [userIsConnect]);
   return (
@@ -88,7 +88,7 @@ const FormLogin = () => {
             backgroundImage:
               'url("https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80")',
           }}
-        ></div>
+        />
         <form className="w-full p-8 lg:w-1/2" onSubmit={handleSubmit}>
           <h2 className="text-2xl font-semibold text-gray-700 text-center">
             Brand
@@ -96,12 +96,12 @@ const FormLogin = () => {
           <p
             className={
               stateForm.messageAlert.length < 1
-                ? "text-xl text-gray-600 text-center"
-                : "text-xl text-red-600 text-center"
+                ? 'text-xl text-gray-600 text-center'
+                : 'text-xl text-red-600 text-center'
             }
           >
             {stateForm.messageAlert.length < 2
-              ? "Welcome back!"
+              ? 'Welcome back!'
               : stateForm.messageAlert}
           </p>
           <GoogleAuthButton />
@@ -179,6 +179,6 @@ const FormLogin = () => {
       </div>
     </div>
   );
-};
+}
 
 export default FormLogin;

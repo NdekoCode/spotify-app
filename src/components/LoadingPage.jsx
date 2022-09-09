@@ -1,7 +1,7 @@
-import React from "react";
-import Loader from "./Loader";
-import "../assets/css/components/PageLoading.css";
-import "../assets/css/components/Loader.css";
+import React from 'react';
+import Loader from './Loader';
+import '../assets/css/components/PageLoading.css';
+import '../assets/css/components/Loader.css';
 const LoadingPage = () => {
   return (
     <div className="page-loader">

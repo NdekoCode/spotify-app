@@ -1,7 +1,7 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 
-const CardTracksContainer = ({ children }) => {
+function CardTracksContainer({ children }) {
   return (
     <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 gap-x-8  gap-y-2">
       {children}
@@ -13,6 +13,6 @@ const CardTracksContainer = ({ children }) => {
       </NavLink>
     </div>
   );
-};
+}
 
 export default CardTracksContainer;
