@@ -47,12 +47,11 @@ const FormLogin = () => {
       setStateForm((data) => ({ ...data, valid: validEmail(target) }));
     }
   });
-  const handleSubmit = (evt) => {
+  const handleSubmit = useCallback((evt) => {
     evt.preventDefault();
     // "Les données entrer sont invalides"
     const formData = {};
     const validForm = Object.values(userData).every((item) => item.length > 2);
-    console.log(validForm);
     setStateForm((data) => ({
       ...data,
       valid: validForm,
@@ -62,7 +61,6 @@ const FormLogin = () => {
       formData.password = userData.password;
       formData.username = userData.username;
       setDataStorage("userData", userData);
-      console.log(userData, verifyUserConnect());
       verifyUserConnect();
       setUserIsConnect(true);
       setStateForm((data) => ({
@@ -75,7 +73,7 @@ const FormLogin = () => {
         messageAlert: "Les données entrer sont invalides",
       }));
     }
-  };
+  });
   useEffect(() => {
     if (verifyUserConnect()) {
       navigate("/dashboard");
