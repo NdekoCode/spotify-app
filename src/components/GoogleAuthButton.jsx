@@ -1,8 +1,24 @@
 import React, { useEffect } from "react";
-
+// On a installer ce paquer pour pouvoir traduire le token que nous renvois google quand on clique sur ce boutton
+import jwt_decode from "jwt-decode";
+import { setDataStorage } from "../data/utilsFunc";
+import MusicContext from "../data/AppContext";
+import { useNavigate } from "react-router-dom";
 const GoogleAuthButton = () => {
+  const { setUserIsConnect, userData, setUserData } = MusicContext();
+  const navigate = useNavigate();
   function handleCallbackResponse(response) {
-    console.log("Encoded JWT ID token", response.credential);
+    /* La reponse que va nous renvoyer google quand on va cliquer sur le boutton "Se connecter avec google" */
+    const userObject = jwt_decode(response.credential);
+    const userData = {
+      email: userObject?.email,
+      username: userObject?.name,
+      image: userObject?.picture,
+    };
+    setDataStorage("userData", userData);
+    setUserData(userData);
+    setUserIsConnect(true);
+    navigate("/dashboard");
   }
   useEffect(() => {
     /* global google */
