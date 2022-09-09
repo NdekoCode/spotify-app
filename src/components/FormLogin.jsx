@@ -1,4 +1,5 @@
 import React, { useCallback, useState } from "react";
+import { setDataStorage } from "../data/utilsFunc";
 import GoogleAuthButton from "./GoogleAuthButton";
 
 const FormLogin = () => {
@@ -46,8 +47,8 @@ const FormLogin = () => {
       formData.email = stateForm.email;
       formData.password = stateForm.password;
       console.log(formData);
-      localStorage.setItem("userData", JSON.stringify(formData));
-      console.log(JSON.parse(localStorage.getItem("userData")));
+      setDataStorage("userData", formData);
+      console.log();
     } else {
       setStateForm((data) => ({
         ...data,
@@ -69,7 +70,13 @@ const FormLogin = () => {
           <h2 className="text-2xl font-semibold text-gray-700 text-center">
             Brand
           </h2>
-          <p className="text-xl text-gray-600 text-center">
+          <p
+            className={
+              stateForm.messageAlert.length < 1
+                ? "text-xl text-gray-600 text-center"
+                : "text-xl text-red-600 text-center"
+            }
+          >
             {stateForm.messageAlert.length < 2
               ? "Welcome back!"
               : stateForm.messageAlert}
