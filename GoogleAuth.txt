@@ -1,0 +1,2 @@
+GOOGLE_CLIENT_ID: 323982794177-sl6onc3ihvf0ahafap36enhcjrlqnkpb.apps.googleusercontent.com
+GOOGLE SECRET_CODE: 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

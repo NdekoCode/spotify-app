@@ -6,10 +6,13 @@ import UserData from "./UserData";
 import GreetUser from "./GreetUser";
 import Search from "./Search";
 import { useNavigate } from "react-router-dom";
+import { getDataStorage } from "../data/utilsFunc";
 
 const MusicApp = memo(({ children }) => {
   const { idSong, userIsConnect, showFrame, typePlay } = MusicContext();
   const navigate = useNavigate();
+  const user = getDataStorage("userData");
+  console.log(user);
   useEffect(() => {
     if (!userIsConnect) {
       navigate("/login");
@@ -29,7 +32,7 @@ const MusicApp = memo(({ children }) => {
             </div>
             <main className="py-8 md:pb-12">
               <div className="py-10">
-                <GreetUser />
+                <GreetUser user={user?.username} />
               </div>
               <div className="mt-10 md:mt-20 w-centerull sm:justify-start">
                 {children}
