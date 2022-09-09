@@ -129,3 +129,9 @@
 .spotify-card:hover {
   background-color: rgba(9, 9, 9, 0.9);
 }
+.bg-app {
+  background-image: url("../img/bg-default.svg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}

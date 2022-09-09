@@ -4,8 +4,6 @@ import MusicContext from "../data/AppContext";
 import ModalPlayer from "./ModalPlayer";
 import UserData from "./UserData";
 import GreetUser from "./GreetUser";
-import CardTracksContainer from "./CardTracksContainer";
-import TrackData from "./TrackData";
 import Search from "./Search";
 
 const MusicApp = memo(({ children }) => {
@@ -14,7 +12,7 @@ const MusicApp = memo(({ children }) => {
     <>
       <ModalPlayer id={idSong} visibility={showFrame} type={typePlay} />
 
-      <div className="App">
+      <div className="App bg-app">
         <Sidebar />
         <div className="px-8 lg:ml-48 lg:px-20 lg:py-6 bg-black text-gray-100 min-h-screen overflow-hidden">
           <div className="flex flex-col">
