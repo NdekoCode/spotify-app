@@ -6,12 +6,13 @@ import GoogleAuthButton from "./GoogleAuthButton";
 
 const FormLogin = () => {
   const navigate = useNavigate();
-
-  const { userIsConnect, setUserIsConnect } = MusicContext();
-  const [stateForm, setStateForm] = useState({
+  const [userData, setUserData] = useState({
     email: "",
     password: "",
     username: "",
+  });
+  const { userIsConnect, setUserIsConnect } = MusicContext();
+  const [stateForm, setStateForm] = useState({
     valid: false,
     connected: false,
     messageAlert: "",
@@ -36,7 +37,7 @@ const FormLogin = () => {
     const name = target.name;
     const type = target.type;
     const value = target.value.trim();
-    setStateForm((data) => ({ ...data, [name]: value }));
+    setUserData((data) => ({ ...data, [name]: value }));
     validDataLength(value, target, 3);
     if (type === "password") {
       validDataLength(value, target, 8);
@@ -50,12 +51,18 @@ const FormLogin = () => {
     evt.preventDefault();
     // "Les données entrer sont invalides"
     const formData = {};
-    if (stateForm.valid) {
-      formData.email = stateForm.email;
-      formData.password = stateForm.password;
-      formData.username = stateForm.username;
-      setDataStorage("userData", formData);
-      console.log(formData, verifyUserConnect());
+    const validForm = Object.values(userData).every((item) => item.length > 2);
+    console.log(validForm);
+    setStateForm((data) => ({
+      ...data,
+      valid: validForm,
+    }));
+    if (validForm) {
+      formData.email = userData.email;
+      formData.password = userData.password;
+      formData.username = userData.username;
+      setDataStorage("userData", userData);
+      console.log(userData, verifyUserConnect());
       verifyUserConnect();
       setUserIsConnect(true);
       setStateForm((data) => ({
@@ -122,7 +129,7 @@ const FormLogin = () => {
               className="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none"
               placeholder=""
               type="text"
-              value={stateForm.username}
+              value={userData.username}
             />
           </div>
           <div className="mt-4">
@@ -140,7 +147,7 @@ const FormLogin = () => {
               className="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none"
               placeholder=""
               type="email"
-              value={stateForm.email}
+              value={userData.email}
             />
           </div>
           <div className="mt-4">
@@ -158,13 +165,12 @@ const FormLogin = () => {
               className="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none"
               placeholder=""
               name="password"
-              value={stateForm.password}
+              value={userData.password}
               type="password"
             />
           </div>
           <div className="mt-8">
             <button
-              disabled={!stateForm.valid}
               type="submit"
               className="bg-gray-700 text-white cursor-pointer font-bold py-2 px-4 w-full rounded hover:bg-gray-600"
             >
