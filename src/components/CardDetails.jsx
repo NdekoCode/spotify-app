@@ -20,7 +20,7 @@ function CardDetails({ album }) {
       <a
         href="#"
         onClick={showPlayer}
-        className="cursor-pointer hover:bg-gray-700 duration-300  bg-gray-800 shadow-lg border-gray-600 sm:max-h-80	 border rounded-lg sm:rounded-3xl p-5 md:p-8 flex flex-wrap sm:flex-nowrap space-x-8 sm:h-80"
+        className="cursor-pointer hover:bg-gray-700 duration-300  bg-gray-800 shadow-lg  sm:max-h-80	 rounded-lg sm:rounded-3xl p-5 md:p-8 flex flex-wrap sm:flex-nowrap space-x-8 sm:h-80"
       >
         <div className="sm:h-48  w-full sm:w-1/2">
           <img
