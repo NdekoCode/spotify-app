@@ -135,3 +135,11 @@
   background-size: cover;
   background-repeat: no-repeat;
 }
+.bg-app-linear {
+  background: linear-gradient(
+    110deg,
+    hsl(0, 0.5%, 99%, 0.933) 8%,
+    hsl(0, 4%, 95%) 18% 15%,
+    hsla(0, 0.1%, 93%, 0.933) 33%
+  );
+}
