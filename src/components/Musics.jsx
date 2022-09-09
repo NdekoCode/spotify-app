@@ -5,7 +5,7 @@ import TrackData from "./TrackData";
 
 const Musics = () => {
   return (
-    <main className="grid place-items-center mt-5 p-5">
+    <main className="grid place-items-center mt-5 p-5 bg-app ">
       <div>
         <div className="mt-10 md:mt-24">
           <h2 className="text-2xl heading text-center sm:text-left ">

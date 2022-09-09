@@ -1,20 +1,28 @@
-import React, { memo } from "react";
+import React, { memo, useEffect } from "react";
 import Sidebar from "./Sidebar";
 import MusicContext from "../data/AppContext";
 import ModalPlayer from "./ModalPlayer";
 import UserData from "./UserData";
 import GreetUser from "./GreetUser";
-import CardTracksContainer from "./CardTracksContainer";
-import TrackData from "./TrackData";
 import Search from "./Search";
+import { useNavigate } from "react-router-dom";
+import { getDataStorage } from "../data/utilsFunc";
 
 const MusicApp = memo(({ children }) => {
-  const { idSong, showFrame, typePlay } = MusicContext();
+  const { idSong, userIsConnect, showFrame, typePlay } = MusicContext();
+  const navigate = useNavigate();
+  const user = getDataStorage("userData");
+  console.log(user);
+  useEffect(() => {
+    if (!userIsConnect) {
+      navigate("/login");
+    }
+  }, [userIsConnect]);
   return (
     <>
       <ModalPlayer id={idSong} visibility={showFrame} type={typePlay} />
 
-      <div className="App">
+      <div className="App bg-app">
         <Sidebar />
         <div className="px-8 lg:ml-48 lg:px-20 lg:py-6 bg-black text-gray-100 min-h-screen overflow-hidden">
           <div className="flex flex-col">
@@ -24,7 +32,7 @@ const MusicApp = memo(({ children }) => {
             </div>
             <main className="py-8 md:pb-12">
               <div className="py-10">
-                <GreetUser />
+                <GreetUser user={user?.username} />
               </div>
               <div className="mt-10 md:mt-20 w-centerull sm:justify-start">
                 {children}

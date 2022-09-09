@@ -183,12 +183,6 @@ export const homeRoute = [
 
   {
     path: "/login",
-    name: "Sign Up",
-    icon: "",
-  },
-
-  {
-    path: "/login",
     name: "Login",
     icon: "",
   },
