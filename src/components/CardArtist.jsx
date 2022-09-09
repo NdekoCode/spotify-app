@@ -2,9 +2,7 @@ import React, { useCallback } from 'react';
 import MusicContext from '../data/AppContext';
 import artistImg from '../assets/img/artist.jpeg';
 
-// eslint-disable-next-line react/prop-types
-function CardArtist({ artist }) {
-  // eslint-disable-next-line react/prop-types
+const CardArtist = ({ artist }) => {
   const { followers, id, images, name, popularity, type } = artist;
   const { handleFrame, setTypePlay, setShowFrame, setIdSong } = MusicContext();
   const showPlayer = useCallback(() => {
@@ -15,9 +13,8 @@ function CardArtist({ artist }) {
   });
   const image = images[0];
   return (
-    <div className="container mx-auto max-w-xs rounded-lg overflow-hidden shadow-lg my-2 bg-white">
+    <div className="container mx-auto w-full max-w-xs rounded-lg overflow-hidden shadow-lg my-2 bg-white">
       <div className="relative mb-6">
-        {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
         <img
           className="w-full object-cover h-96"
           src={image?.url ?? artistImg}
@@ -33,7 +30,6 @@ function CardArtist({ artist }) {
             </p>
           </div>
           <button
-            type="button"
             onClick={showPlayer}
             className="btn-m p-4 rounded-full transition ease-in duration-200 focus:outline-none"
           >
@@ -64,6 +60,6 @@ function CardArtist({ artist }) {
       </div>
     </div>
   );
-}
+};
 
 export default CardArtist;

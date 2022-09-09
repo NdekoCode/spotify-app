@@ -76,7 +76,7 @@ function CardSong({ song }) {
           </div>
           <div className="w-32">
             <h3 className="mt-1 text-gray-400 truncate">{name}</h3>
-            <div className="text-sm text-gray-700 mb-2">
+            <div className="text-sm text-gray-400 mb-2">
               <h3 className="truncate">{artists[0].name}</h3>
             </div>
           </div>

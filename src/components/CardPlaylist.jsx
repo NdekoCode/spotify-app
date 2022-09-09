@@ -32,7 +32,7 @@ function CardPlaylist({ playlist }) {
       <p className="text-gray-400 font-light mt-2 text-xs">
         {catString(description, 90)}
       </p>
-      <p className="text-gray-200 mt-2">
+      <p className="text-gray-400 mt-5 text-sm">
         Créer par :
         <strong className=" font-medium "> {owner.display_name}</strong>
       </p>

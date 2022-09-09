@@ -13,7 +13,7 @@ function CardTrack({ track }) {
   });
   return (
     <div className="card-track ounded-2xl bg-gray-700 dark:bg-gray-700 shadow cursor-pointer min-w-max mb-3">
-      <div className="group relative h-60 flex flex-col items-center ">
+      <div className="group relative h-60 flex flex-col items-center justify-center ">
         <img
           className="block rounded-full h-40 w-40 shadow-2xl"
           src={album.images[0].url}
@@ -39,13 +39,13 @@ function CardTrack({ track }) {
         </div>
       </div>
       <div className="p-1">
-        <h3 className="text-gray-600 dark:text-white text-lg font-semibold">
+        <h3 className="text-gray-100 dark:text-white text-lg mb-3 font-semibold">
           {artists.map(
             (artist, index) =>
               artist.name + (index + 1 < artists.length ? ', ' : ''),
           )}
         </h3>
-        <p className="text-gray-400 dark:text-gray-200">{name}</p>
+        <p className="text-gray-400 dark:text-gray-200 text-base">{name}</p>
       </div>
     </div>
   );
