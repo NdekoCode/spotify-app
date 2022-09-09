@@ -1,7 +1,7 @@
-import React, { useCallback } from "react";
-import MusicContext from "../data/AppContext";
+import React, { useCallback } from 'react';
+import MusicContext from '../data/AppContext';
 
-const CardTrack = ({ track }) => {
+function CardTrack({ track }) {
   const { album, artists, name, id, type } = track;
 
   const { handleFrame, setTypePlay, setShowFrame, setIdSong } = MusicContext();
@@ -21,6 +21,7 @@ const CardTrack = ({ track }) => {
         />
         <div className="absolute h-40 w-40 bg-gray-800 bg-opacity-0 group-hover:bg-opacity-60 flex items-center rounded-full group-hover:opacity-100 transition duration-300 justify-evenly">
           <button
+            type="button"
             onClick={showPlayer}
             className="hover:scale-110 text-green-500 opacity-0 transform translate-y-3 group-hover:translate-y-0 group-hover:opacity-100 transition duration-300"
           >
@@ -41,13 +42,13 @@ const CardTrack = ({ track }) => {
         <h3 className="text-gray-600 dark:text-white text-lg font-semibold">
           {artists.map(
             (artist, index) =>
-              artist.name + (index + 1 < artists.length ? ", " : "")
+              artist.name + (index + 1 < artists.length ? ', ' : ''),
           )}
         </h3>
         <p className="text-gray-400 dark:text-gray-200">{name}</p>
       </div>
     </div>
   );
-};
+}
 
 export default CardTrack;

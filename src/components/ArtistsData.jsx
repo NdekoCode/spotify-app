@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from "react";
-import MusicContext from "../data/AppContext";
-import useFetch from "../data/hookFunc";
-import { idArtist } from "../data/getData";
-import CardArtist from "./CardArtist";
-import SkeletonData from "./SkeletonData";
+import React, { useEffect, useState } from 'react';
+import MusicContext from '../data/AppContext';
+import useFetch from '../data/hookFunc';
+import { idArtist } from '../data/getData';
+import CardArtist from './CardArtist';
+import SkeletonData from './SkeletonData';
 
-const ArtistsData = () => {
+function ArtistsData() {
   const urlArtists = `https://api.spotify.com/v1/artists?ids=${idArtist.join(
-    ","
+    ','
   )}`;
   const [artists, setArtists] = useState({});
   const {
@@ -29,22 +29,21 @@ const ArtistsData = () => {
     setIsLoading(artistsLoading);
 
     if (searchUser.length > 1) {
-      let { artists } = dataSongs;
+      // eslint-disable-next-line no-shadow
+      const { artists } = dataSongs;
       if (artists !== undefined) {
         setArtists(artists.items);
         setDataSong((d) => ({ ...d, artists }));
-        console.log("DOnnées avec la recherche", artists);
       }
     } else {
-      let { artists } = artistsData;
+      // eslint-disable-next-line no-shadow
+      const { artists } = artistsData;
       setArtists(artists);
       setDataSong((d) => ({ ...d, artists }));
-      console.log("DOnnées sans search", artists);
     }
   }, [searchUser, dataSongs.artists, artistsData.artists]);
 
   if (!isLoading && artists !== undefined && Object.keys(artists).length > 0) {
-    console.log("Data loaded ", artists);
     const { items } = artists;
     if (items === undefined) {
       return (
@@ -55,6 +54,7 @@ const ArtistsData = () => {
             </h2>
             <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4  p-5">
               {artists.map((artist, index) => (
+                // eslint-disable-next-line react/no-array-index-key
                 <CardArtist key={index} artist={artist} />
               ))}
             </section>
@@ -70,6 +70,7 @@ const ArtistsData = () => {
           </h2>
           <section className="grid grid-cols-1 lg:grid-cols-2  xl:grid-cols-2 gap-4">
             {items.map((artist, index) => (
+              // eslint-disable-next-line react/no-array-index-key
               <CardArtist key={index} artist={artist} />
             ))}
           </section>
@@ -79,6 +80,6 @@ const ArtistsData = () => {
   }
 
   return <SkeletonData />;
-};
+}
 
 export default ArtistsData;

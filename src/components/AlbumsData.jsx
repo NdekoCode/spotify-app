@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
-import CardDetails from "./CardDetails";
-import MusicContext from "../data/AppContext";
-import useFetch from "../data/hookFunc";
-import SkeletonData from "./SkeletonData";
+import React, { useEffect, useState } from 'react';
+import CardDetails from './CardDetails';
+import MusicContext from '../data/AppContext';
+import useFetch from '../data/hookFunc';
+import SkeletonData from './SkeletonData';
 
-const AlbumsData = () => {
+function AlbumsData() {
   const urlAlbums = `https://api.spotify.com/v1/browse/new-releases`;
   const [albums, setAlbums] = useState({});
   const {
@@ -26,21 +26,19 @@ const AlbumsData = () => {
     setIsLoading(albumsLoading);
 
     if (searchUser.length > 1) {
-      let { albums } = dataSongs;
+      // eslint-disable-next-line no-shadow
+      const { albums } = dataSongs;
       if (albums !== undefined) {
         setAlbums(albums.items);
         setDataSong((d) => ({ ...d, albums }));
-        console.log("DOnnées avec la recherche", albums);
       }
     } else {
       setAlbums(albumsData.albums);
       setDataSong((d) => ({ ...d, albums: albumsData.albums }));
-      console.log("DOnnées sans search", albums);
     }
   }, [searchUser, dataSongs.albums, albumsData.albums]);
 
   if (!isLoading && albums !== undefined && Object.keys(albums).length > 0) {
-    console.log("Data loaded ", albums);
     const { items } = albums;
     if (items !== undefined) {
       return (
@@ -50,8 +48,9 @@ const AlbumsData = () => {
               Suggest Albums of all time
             </h2>
             <section className="grid grid-cols-1 lg:grid-cols-2  xl:grid-cols-2 gap-4">
-              {items.map((album, index) => (
-                <CardDetails album={album} key={index} />
+              {items.map((album, key) => (
+                // eslint-disable-next-line react/no-array-index-key
+                <CardDetails album={album} key={key} />
               ))}
             </section>
           </div>
@@ -67,6 +66,7 @@ const AlbumsData = () => {
           </h2>
           <section className="grid grid-cols-1 lg:grid-cols-2  xl:grid-cols-2 gap-4">
             {albums.map((album, index) => (
+              // eslint-disable-next-line react/no-array-index-key
               <CardDetails album={album} key={index} />
             ))}
           </section>
@@ -75,6 +75,6 @@ const AlbumsData = () => {
     );
   }
   return <SkeletonData />;
-};
+}
 
 export default AlbumsData;

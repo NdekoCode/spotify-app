@@ -1,8 +1,10 @@
-import React, { useCallback } from "react";
-import MusicContext from "../data/AppContext";
-import { catString } from "../data/utilsFunc";
+/* eslint-disable camelcase */
+import React, { useCallback } from 'react';
+import MusicContext from '../data/AppContext';
+import { catString } from '../data/utilsFunc';
 
-const CardDetails = ({ album }) => {
+function CardDetails({ album }) {
+  // eslint-disable-next-line camelcase
   const { artists, images, name, total_tracks, release_date, id, type } = album;
   const { handleFrame, setShowFrame, setTypePlay, setIdSong } = MusicContext();
   const showPlayer = useCallback(() => {
@@ -14,7 +16,9 @@ const CardDetails = ({ album }) => {
   return (
     // <div className="bg-dark group py-4 sm:py-6 flex flex-col justify-center md:py-12">
     <div className="py-3 sm:max-w-xl sm:mx-auto ">
-      <div
+      {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+      <a
+        href="#"
         onClick={showPlayer}
         className="cursor-pointer hover:bg-gray-700 duration-300  bg-gray-800 shadow-lg border-gray-600 sm:max-h-80	 border rounded-lg sm:rounded-3xl p-5 md:p-8 flex flex-wrap sm:flex-nowrap space-x-8 sm:h-80"
       >
@@ -28,7 +32,7 @@ const CardDetails = ({ album }) => {
         <div className="group flex flex-col w-full mt-5 sm:mt-0 sm:w-1/2 space-y-4 relative">
           <div className="flex justify-between items-start w-full sm:w-auto">
             <h2 className="text-lg md:text-3xl font-bold">
-              {" "}
+              {' '}
               {catString(name)}
             </h2>
             <div className="bg-yellow-400 font-bold rounded-xl p-2">
@@ -38,12 +42,13 @@ const CardDetails = ({ album }) => {
           <div className="pb-10">
             <div className="text-sm text-gray-400">Album</div>
             <div className="text-base md:text-lg text-gray-300">
-              {release_date.split("-")[0]}
+              {release_date.split('-')[0]}
             </div>
           </div>
 
           <div className="absolute animate-pulse rounded-2xl bg-opacity-0 group-hover:bg-opacity-60 w-full h-full top-0 flex items-center group-hover:opacity-100 transition duration-300 justify-evenly">
             <button
+              type="button"
               onClick={showPlayer}
               className="hover:scale-110 text-green opacity-0 transform translate-y-3 group-hover:translate-y-0 group-hover:opacity-100 transition duration-300"
             >
@@ -63,10 +68,10 @@ const CardDetails = ({ album }) => {
             {catString(artists[0].name)}
           </div>
         </div>
-      </div>
+      </a>
     </div>
     // </div>
   );
-};
+}
 
 export default CardDetails;

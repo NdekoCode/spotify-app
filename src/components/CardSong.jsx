@@ -1,7 +1,8 @@
-import React, { useCallback } from "react";
-import MusicContext from "../data/AppContext";
+/* eslint-disable jsx-a11y/anchor-is-valid */
+import React, { useCallback } from 'react';
+import MusicContext from '../data/AppContext';
 
-const CardSong = ({ song }) => {
+function CardSong({ song }) {
   const { id, album, type, artists, name } = song;
   const { handleFrame, setTypePlay, setShowFrame, setIdSong } = MusicContext();
   const showPlayer = useCallback((evt) => {
@@ -12,7 +13,7 @@ const CardSong = ({ song }) => {
     setShowFrame(true);
   });
   return (
-    <a onClick={showPlayer}>
+    <a href="#" onClick={showPlayer}>
       <div className="bg-card pb-1.5 mr-3 md:mr-6 mt-4 w-36 md:w-40 shadow-2xl rounded-sm transition-transform duration-200 transform hover:scale-105">
         <div className="px-4">
           <div className="relative group image pt-4 opacity-75">
@@ -23,7 +24,10 @@ const CardSong = ({ song }) => {
             />
 
             <div className="absolute bg-black rounded-2xl bg-opacity-0 group-hover:bg-opacity-60 w-full h-full top-0 flex items-center group-hover:opacity-100 transition duration-300 justify-evenly">
-              <button className="hover:scale-110 text-white opacity-0 transform translate-y-3 group-hover:translate-y-0 group-hover:opacity-100 transition duration-300">
+              <button
+                type="button"
+                className="hover:scale-110 text-white opacity-0 transform translate-y-3 group-hover:translate-y-0 group-hover:opacity-100 transition duration-300"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width={20}
@@ -36,6 +40,7 @@ const CardSong = ({ song }) => {
                 </svg>
               </button>
               <button
+                type="button"
                 onClick={showPlayer}
                 className="hover:scale-110 text-green-500 opacity-0 transform translate-y-3 group-hover:translate-y-0 group-hover:opacity-100 transition duration-300"
               >
@@ -50,7 +55,10 @@ const CardSong = ({ song }) => {
                   <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z" />
                 </svg>
               </button>
-              <button className="hover:scale-110 text-white opacity-0 transform translate-y-3 group-hover:translate-y-0 group-hover:opacity-100 transition duration-300">
+              <button
+                type="button"
+                className="hover:scale-110 text-white opacity-0 transform translate-y-3 group-hover:translate-y-0 group-hover:opacity-100 transition duration-300"
+              >
                 <svg
                   fill="currentColor"
                   className="bi bi-heart"
@@ -76,6 +84,6 @@ const CardSong = ({ song }) => {
       </div>
     </a>
   );
-};
+}
 
 export default CardSong;

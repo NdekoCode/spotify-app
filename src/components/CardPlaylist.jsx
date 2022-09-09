@@ -1,9 +1,9 @@
-import React, { useCallback } from "react";
-import MusicContext from "../data/AppContext";
-import artistImg from "../assets/img/artist.jpeg";
-import { catString } from "../data/utilsFunc";
+import React, { useCallback } from 'react';
+import MusicContext from '../data/AppContext';
+import artistImg from '../assets/img/artist.jpeg';
+import { catString } from '../data/utilsFunc';
 
-const CardPlaylist = ({ playlist }) => {
+function CardPlaylist({ playlist }) {
   const { description, href, id, images, name, owner, type } = playlist;
   const { handleFrame, setTypePlay, setShowFrame, setIdSong } = MusicContext();
   const showPlayer = useCallback((evt) => {
@@ -22,8 +22,9 @@ const CardPlaylist = ({ playlist }) => {
     >
       {/* Image Cover */}
       <img
-        src={image?.url.includes("mosaic") ? artistImg : image?.url}
+        src={image?.url.includes('mosaic') ? artistImg : image?.url}
         className="w-full rounded shadow"
+        alt=""
       />
       {/* Title */}
       <h3 className="text-gray-200 font-bold mt-5"> {name}</h3>
@@ -37,6 +38,6 @@ const CardPlaylist = ({ playlist }) => {
       </p>
     </a>
   );
-};
+}
 
 export default CardPlaylist;
