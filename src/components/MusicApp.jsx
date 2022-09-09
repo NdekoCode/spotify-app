@@ -1,13 +1,20 @@
-import React, { memo } from "react";
+import React, { memo, useEffect } from "react";
 import Sidebar from "./Sidebar";
 import MusicContext from "../data/AppContext";
 import ModalPlayer from "./ModalPlayer";
 import UserData from "./UserData";
 import GreetUser from "./GreetUser";
 import Search from "./Search";
+import { useNavigate } from "react-router-dom";
 
 const MusicApp = memo(({ children }) => {
-  const { idSong, showFrame, typePlay } = MusicContext();
+  const { idSong, userIsConnect, showFrame, typePlay } = MusicContext();
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!userIsConnect) {
+      navigate("/login");
+    }
+  }, [userIsConnect]);
   return (
     <>
       <ModalPlayer id={idSong} visibility={showFrame} type={typePlay} />

@@ -8,7 +8,7 @@ import { CLIENT_ID, CLIENT_SECRET } from "./data/secureData";
 import { disconnectedUser, verifyUserConnect } from "./data/utilsFunc";
 
 function App() {
-  const { setSetting, userIsConnect, setUserIsConnect } = MusicContext();
+  const { setSetting, setUserIsConnect } = MusicContext();
   useEffect(() => {
     setUserIsConnect(verifyUserConnect());
     (async () => {
