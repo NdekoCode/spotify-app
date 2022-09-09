@@ -1,12 +1,19 @@
-import React, { useCallback, useState } from "react";
-import { setDataStorage } from "../data/utilsFunc";
+import React, { useCallback, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import MusicContext from "../data/AppContext";
+import { setDataStorage, verifyUserConnect } from "../data/utilsFunc";
 import GoogleAuthButton from "./GoogleAuthButton";
 
 const FormLogin = () => {
+  const navigate = useNavigate();
+
+  const { userIsConnect, setUserIsConnect } = MusicContext();
   const [stateForm, setStateForm] = useState({
     email: "",
     password: "",
+    username: "",
     valid: false,
+    connected: false,
     messageAlert: "",
   });
   const validDataLength = (value, el, dataLength) => {
@@ -46,9 +53,15 @@ const FormLogin = () => {
     if (stateForm.valid) {
       formData.email = stateForm.email;
       formData.password = stateForm.password;
-      console.log(formData);
+      formData.username = stateForm.username;
       setDataStorage("userData", formData);
-      console.log();
+      console.log(formData, verifyUserConnect());
+      verifyUserConnect();
+      setUserIsConnect(true);
+      setStateForm((data) => ({
+        ...data,
+        connected: true,
+      }));
     } else {
       setStateForm((data) => ({
         ...data,
@@ -56,6 +69,11 @@ const FormLogin = () => {
       }));
     }
   };
+  useEffect(() => {
+    if (verifyUserConnect()) {
+      navigate("/dashboard");
+    }
+  }, [userIsConnect]);
   return (
     <div className="py-6 flex items-center min-h-screen bg-app-linear">
       <div className="flex w-full bg-white rounded-lg shadow-lg overflow-hidden mx-auto max-w-sm lg:max-w-4xl">
@@ -88,6 +106,24 @@ const FormLogin = () => {
               or login with email
             </a>
             <span className="border-b w-1/5 lg:w-1/4" />
+          </div>
+          <div className="mt-4">
+            <label
+              htmlFor="username"
+              className="block text-gray-700 text-sm font-bold mb-2"
+            >
+              Username
+            </label>
+            <input
+              name="username"
+              onChange={handleChange}
+              onInput={handleChange}
+              id="username"
+              className="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none"
+              placeholder=""
+              type="text"
+              value={stateForm.username}
+            />
           </div>
           <div className="mt-4">
             <label

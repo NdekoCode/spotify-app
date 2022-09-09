@@ -1,6 +1,14 @@
-import React from "react";
+import React, { useCallback } from "react";
+import MusicContext from "../data/AppContext";
+import { disconnectedUser, verifyUserConnect } from "../data/utilsFunc";
 
 const UserData = () => {
+  const { userIsConnect, setUserIsConnect } = MusicContext();
+  const disconnected = useCallback((evt) => {
+    evt.preventDefault();
+    setUserIsConnect(!userIsConnect);
+    disconnectedUser();
+  });
   return (
     <div className="flex justify-around md:justify-end order-last md:order-first mt-10 md:mt-0 md:mb-0">
       <div className="flex items-center">
@@ -20,20 +28,26 @@ const UserData = () => {
             Home
           </a>
         </div>
-        <a href="/" className="text-gray-600 hover:text-gray-400">
-          <div className="flex items-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="fill-current"
-              viewBox="0 0 24 24"
-              width={13}
-            >
-              <path fill="none" d="M0 0h24v24H0z" />
-              <path d="M5 11h8v2H5v3l-5-4 5-4v3zm-1 7h2.708a8 8 0 1 0 0-12H4A9.985 9.985 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10a9.985 9.985 0 0 1-8-4z" />
-            </svg>
-            <h2 className="ml-2 text-sm">Logout</h2>
-          </div>
-        </a>
+        {userIsConnect && (
+          <a
+            onClick={disconnected}
+            href="/"
+            className="text-gray-600 hover:text-gray-400"
+          >
+            <div className="flex items-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="fill-current"
+                viewBox="0 0 24 24"
+                width={13}
+              >
+                <path fill="none" d="M0 0h24v24H0z" />
+                <path d="M5 11h8v2H5v3l-5-4 5-4v3zm-1 7h2.708a8 8 0 1 0 0-12H4A9.985 9.985 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10a9.985 9.985 0 0 1-8-4z" />
+              </svg>
+              <h2 className="ml-2 text-sm">Logout</h2>
+            </div>
+          </a>
+        )}
       </div>
     </div>
   );
