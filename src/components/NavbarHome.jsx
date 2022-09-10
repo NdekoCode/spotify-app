@@ -12,7 +12,7 @@ const NavbarHome = () => {
         <div
           aria-label="Home. logo"
           role="img"
-          className="flex font-black items-center text-gray-300 text-2xl bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 text-transparent bg-clip-text"
+          className="flex font-black items-center  text-2xl bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 text-transparent bg-clip-text"
         >
           <img src={logo} className="mr-3 h-6 sm:h-7" alt="NdekoMusic Logo" />
           NdekoMusic
