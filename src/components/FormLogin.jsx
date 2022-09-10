@@ -80,8 +80,8 @@ function FormLogin() {
     }
   }, [userIsConnect]);
   return (
-    <div className="py-6 flex items-center min-h-screen bg-app-linear">
-      <div className="flex w-full bg-white rounded-lg shadow-lg overflow-hidden mx-auto max-w-sm lg:max-w-4xl">
+    <div className="py-6 flex items-center min-h-screen bg-gradient-to-r from-black via-black to-black text-white">
+      <div className="flex w-full shadow-slate-700  bg-gray-50 rounded-lg shadow-lg overflow-hidden mx-auto max-w-sm lg:max-w-4xl">
         <div
           className="hidden lg:block lg:w-1/2 bg-cover"
           style={{
@@ -89,7 +89,10 @@ function FormLogin() {
               'url("https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80")',
           }}
         />
-        <form className="w-full p-8 lg:w-1/2" onSubmit={handleSubmit}>
+        <form
+          className="w-full p-5 lg:p-8 lg:w-1/2 mx-3 lg:mx-0"
+          onSubmit={handleSubmit}
+        >
           <h2 className="text-2xl font-semibold text-gray-700 text-center">
             Brand
           </h2>

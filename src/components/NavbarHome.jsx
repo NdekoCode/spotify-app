@@ -9,14 +9,15 @@ const NavbarHome = () => {
   return (
     <nav className="w-full shadow-sm bg-black">
       <div className="py-5 md:py-0 container mx-auto px-6 flex items-center justify-between">
-        <div
+        <NavLink
+          to="/"
           aria-label="Home. logo"
           role="img"
           className="flex font-black items-center  text-2xl bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 text-transparent bg-clip-text"
         >
           <img src={logo} className="mr-3 h-6 sm:h-7" alt="NdekoMusic Logo" />
           NdekoMusic
-        </div>
+        </NavLink>
         <div>
           <button
             onClick={() => toggleMenu(true)}
