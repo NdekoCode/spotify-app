@@ -7,7 +7,7 @@ import { homeRoute } from '../routes/routes';
 const NavbarHome = () => {
   const { menu, toggleMenu } = MusicContext();
   return (
-    <nav className="w-full border-b bg-black">
+    <nav className="w-full shadow-sm bg-black">
       <div className="py-5 md:py-0 container mx-auto px-6 flex items-center justify-between">
         <div
           aria-label="Home. logo"
