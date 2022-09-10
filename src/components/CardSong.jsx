@@ -16,7 +16,7 @@ function CardSong({ song }) {
     <a href="#" onClick={showPlayer}>
       <div className="bg-card pb-1.5 mr-3 md:mr-6 mt-4 w-36 md:w-40 shadow-2xl rounded-sm transition-transform duration-200 transform hover:scale-105">
         <div className="px-4">
-          <div className="relative group image pt-4 opacity-75">
+          <div className="relative group image pt-4 opacity-75 bg-transparent backdrop-blur">
             <img
               src={album.images[0].url}
               alt={name}

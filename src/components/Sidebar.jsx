@@ -1,10 +1,13 @@
-import logo from "../assets/img/drc.svg";
-import { asideLinks } from "../routes/routes";
-import SidebarItem from "./SidebarItem";
+import logo from '../assets/img/drc.svg';
+import { asideLinks } from '../routes/routes';
+import SidebarItem from './SidebarItem';
 const Sidebar = () => {
   return (
     <aside className="z-50 fixed bottom-0 shadow-xl  shadow-gray-100 md:shadow border-card lg:left-0 w-full lg:w-48 bg-black lg:h-screen text-white lg:pt-12">
-      <a href="#" className="hidden lg:flex lg:items-center pl-2.5 mb-10">
+      <a
+        href="#"
+        className="hidden lg:flex lg:items-center pl-2.5 mb-10  text-gray-300 text-2xl bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 text-transparent bg-clip-text"
+      >
         <img src={logo} className="mr-3 h-6 sm:h-7" alt="NdekoMusic Logo" />
         <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
           NdekoMusic
