@@ -1,6 +1,6 @@
-import React, { useCallback, useEffect, useState } from "react";
-import MusicContext from "../data/AppContext";
-import { findAndSetData } from "../data/getData";
+import React, { useCallback, useEffect, useState } from 'react';
+import MusicContext from '../data/AppContext';
+import { findAndSetData } from '../data/getData';
 
 const Search = () => {
   const {
@@ -13,10 +13,10 @@ const Search = () => {
   } = MusicContext();
   const [input, setInput] = useState(searchUser);
   const params = {
-    method: "GET",
+    method: 'GET',
     headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
       Authorization: setting.authorize_token,
     },
   };
@@ -67,7 +67,7 @@ const Search = () => {
         <input
           type="search"
           id="simple-search"
-          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg rounded-tr-none rounded-br-none focus:ring-blue-500 focus:border-blue-500 block w-full min-w-max p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 duration-300 outline-none border-r-0 border-r-none"
+          className="bg-gray-500 border-gray-300 text-gray-100 text-sm rounded-lg rounded-tr-none rounded-br-none focus:ring-blue-500 focus:border-blue-500 block w-full min-w-max p-2.5  dark:bg-gray-700 placeholder:text-white dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 duration-300 outline-none border-r-0 border-r-none"
           placeholder="Search"
           value={input}
           onChange={handleChange}
@@ -76,7 +76,7 @@ const Search = () => {
 
         <button
           type="submit"
-          className="p-2.5 text-sm font-medium  text-gray-600 hover:text-gray-50 rounded-lg rounded-tl-none rounded-bl-none border border-l-none hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 duration-300"
+          className="p-2.5 text-sm font-medium  text-gray-300 hover:text-gray-50 rounded-lg rounded-tl-none rounded-bl-none border-l-none hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 duration-300"
         >
           <svg
             className="w-5 h-5"

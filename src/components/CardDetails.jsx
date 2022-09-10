@@ -15,12 +15,15 @@ function CardDetails({ album }) {
   });
   return (
     // <div className="bg-dark group py-4 sm:py-6 flex flex-col justify-center md:py-12">
-    <div className="py-3 sm:max-w-xl sm:mx-auto ">
+    <div
+      className="sm:max-w-xl sm:mx-auto 	 rounded-lg sm:rounded-3xl overflow-hidden "
+      style={{ backgroundImage: `url(${album.images[0].url})` }}
+    >
       {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
       <a
         href="#"
         onClick={showPlayer}
-        className="cursor-pointer hover:bg-gray-700 duration-300  bg-gray-800 shadow-lg  sm:max-h-80	 rounded-lg sm:rounded-3xl p-5 md:p-8 flex flex-wrap sm:flex-nowrap space-x-8 sm:h-80"
+        className="cursor-pointer duration-300  bg-gray-800 shadow-lg  sm:max-h-80 p-5 md:p-8 flex flex-wrap sm:flex-nowrap space-x-8 sm:h-80 bg-transparent backdrop-blur h-full w-full"
       >
         <div className="sm:h-48  w-full sm:w-1/2">
           <img

@@ -130,7 +130,7 @@
   background-color: rgba(9, 9, 9, 0.9);
 }
 .bg-app {
-  background-image: url("../img/bg-default.svg");
+  background-image: url('../img/bg-default.svg');
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -142,4 +142,66 @@
     hsl(0, 4%, 95%) 18% 15%,
     hsla(0, 0.1%, 93%, 0.933) 33%
   );
+}
+
+.card {
+  position: relative;
+}
+.card-img {
+  opacity: 0;
+  transition: 0.3s;
+}
+.card:hover .card-img {
+  opacity: 1;
+}
+.card-bg {
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 24px;
+  overflow: hidden;
+  filter: brightness(0.75) saturate(1.2) contrast(0.85);
+  transition: 0.35s;
+}
+.card-content {
+  position: absolute;
+  padding: 1.5rem;
+  color: #fff;
+}
+.card-content p {
+  color: rgba(255, 255, 255, 0.6);
+}
+.card-content .title {
+  font-size: 1.9rem;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
+}
+.card-tag {
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+.card:hover .card-bg {
+  transform: scale(1.05);
+}
+.cards:hover > .card:not(:hover) .card-bg {
+  filter: brightness(0.5) saturate(0) contrast(1.2);
+}
+@media only screen and (min-width: 576px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cards:hover > .card:not(:hover) .card-bg {
+    filter: brightness(0.5) saturate(0) contrast(1.2) blur(5px);
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }

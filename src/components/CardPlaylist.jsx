@@ -16,7 +16,7 @@ function CardPlaylist({ playlist }) {
   const [image] = images;
   return (
     <a
-      className="hover:bg-gray-700 delay-50 duration-100 bg-gray-800 p-5 rounded-lg w-full sm:w-60 md:w-64 lg:w-52 group"
+      className="hover:bg-gray-700  border-gray-900  delay-50 bg-gray-800 p-5 rounded-lg w-full sm:w-60 md:w-64 lg:w-52 group duration-300 bg-transparent backdrop-blur"
       href={href}
       onClick={showPlayer}
     >

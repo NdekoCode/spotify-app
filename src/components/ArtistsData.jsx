@@ -7,7 +7,7 @@ import SkeletonData from './SkeletonData';
 
 function ArtistsData() {
   const urlArtists = `https://api.spotify.com/v1/artists?ids=${idArtist.join(
-    ','
+    ',',
   )}`;
   const [artists, setArtists] = useState({});
   const {
@@ -23,7 +23,7 @@ function ArtistsData() {
     urlArtists,
     newArtists,
     setting.authorize_token,
-    isLoading
+    isLoading,
   );
   useEffect(() => {
     setIsLoading(artistsLoading);
@@ -48,11 +48,15 @@ function ArtistsData() {
     if (items === undefined) {
       return (
         <main className="grid place-items-center mt-5 p-5">
-          <div>
+          <div className="w-full">
             <h2 className="text-2xl heading text-center sm:text-left ">
-              Suggest Artists
+              Suggest{' '}
+              <span className="bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 text-transparent bg-clip-text">
+                {searchUser}
+              </span>{' '}
+              Artists
             </h2>
-            <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4  p-5">
+            <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4  p-5">
               {artists.map((artist, index) => (
                 // eslint-disable-next-line react/no-array-index-key
                 <CardArtist key={index} artist={artist} />
@@ -66,7 +70,11 @@ function ArtistsData() {
       <main className="grid place-items-center mt-5 p-5">
         <div>
           <h2 className="title text-4xl text-gray-800 font-black">
-            Suggest Artists
+            Suggest{' '}
+            <span className="bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 text-transparent bg-clip-text">
+              {searchUser}
+            </span>{' '}
+            of all time Artists
           </h2>
           <section className="grid grid-cols-1 lg:grid-cols-2  xl:grid-cols-2 gap-4">
             {items.map((artist, index) => (
