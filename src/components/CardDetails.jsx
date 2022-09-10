@@ -53,8 +53,8 @@ relative cursor-pointer duration-300  bg-gray-800 shadow-lg  sm:max-h-80 p-5 md:
           </button>
         </div>
         <div className=" flex flex-col w-full mt-5 sm:mt-0 sm:w-1/2 space-y-4 ">
-          <div className="flex justify-between items-start w-full sm:w-auto">
-            <h2 className="text-lg md:text-2xl font-bold break-words">
+          <div className="flex flex-wrap md:flex-nowrap justify-between items-start w-full sm:w-auto">
+            <h2 className="text-lg w-full  md:w-auto md:text-2xl font-bold break-words shadow-inner ">
               {catString(name)}
             </h2>
             <div className="bg-yellow-400 font-bold rounded-xl p-2">
@@ -62,13 +62,13 @@ relative cursor-pointer duration-300  bg-gray-800 shadow-lg  sm:max-h-80 p-5 md:
             </div>
           </div>
           <div className="pb-10">
-            <div className="text-sm text-gray-400">Album</div>
+            <div className="text-sm text-gray-400 shadow-inner ">Album</div>
             <div className="text-base md:text-lg text-gray-300">
               {release_date.split('-')[0]}
             </div>
           </div>
 
-          <div className="flex text-xl md:text-2xl font-bold text-a">
+          <div className="flex text-xl md:text-2xl font-bold text-a shadow-inner ">
             {catString(artists[0].name)}
           </div>
         </div>
