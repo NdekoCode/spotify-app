@@ -12,7 +12,7 @@ const NavbarHome = () => {
         <div
           aria-label="Home. logo"
           role="img"
-          className="flex font-black items-center text-gray-300 text-2xl"
+          className="flex font-black items-center text-gray-300 text-2xl bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 text-transparent bg-clip-text"
         >
           <img src={logo} className="mr-3 h-6 sm:h-7" alt="NdekoMusic Logo" />
           NdekoMusic
@@ -66,7 +66,7 @@ const NavbarHome = () => {
               {homeRoute.map(({ path, name }, index) => (
                 <li
                   key={index}
-                  className="text-gray-700 hover:text-gray-300 cursor-pointer text-base lg:text-lg pt-10 md:pt-0"
+                  className="text-gray-700 hover:text-gray-300 cursor-pointer text-base  pt-10 md:pt-0"
                 >
                   <NavLink
                     to={path}
