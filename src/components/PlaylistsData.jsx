@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import CardDetails from './CardDetails';
 import MusicContext from '../data/AppContext';
 import useFetch from '../data/hookFunc';
 import CardPlaylist from './CardPlaylist';
