@@ -24,7 +24,7 @@ const MusicApp = memo(({ children }) => {
 
       <div className="App bg-app">
         <Sidebar />
-        <div className="px-8 lg:ml-48 lg:px-20 lg:py-6 bg-black text-gray-100 min-h-screen overflow-hidden">
+        <div className="px-4 lg:ml-48 lg:py-5 bg-black text-gray-100 min-h-screen overflow-hidden">
           <div className="flex flex-col">
             <div className="flex justify-center pt-5 flex-wrap md:flex-nowrap items-center flex-row-reverse md:justify-between">
               <UserData />
