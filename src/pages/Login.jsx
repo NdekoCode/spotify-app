@@ -1,8 +1,6 @@
-import React from "react";
-import ButtonForm from "../components/ButtonForm";
-import FormLogin from "../components/FormLogin";
-import GoogleAuthButton from "../components/GoogleAuthButton";
-import NavbarHome from "../components/NavbarHome";
+import React from 'react';
+import FormLogin from '../components/FormLogin';
+import NavbarHome from '../components/NavbarHome';
 
 const Login = () => {
   return (

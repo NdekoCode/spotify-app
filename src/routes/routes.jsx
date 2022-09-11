@@ -1,16 +1,16 @@
-import React, { lazy, Suspense } from "react";
-import LoadingPage from "../components/LoadingPage";
-const Albums = lazy(() => import("../pages/Albums"));
-const PlayList = lazy(() => import("../pages/PlayList"));
-const Dashboard = lazy(() => import("../pages/Dashboard"));
-const Login = lazy(() => import("../pages/Login"));
-const Tracks = lazy(() => import("../pages/Tracks"));
-const Home = lazy(() => import("../pages/Home"));
-const Artists = lazy(() => import("../pages/Artists"));
+import React, { lazy, Suspense } from 'react';
+import LoadingPage from '../components/LoadingPage';
+const Albums = lazy(() => import('../pages/Albums'));
+const PlayList = lazy(() => import('../pages/PlayList'));
+const Dashboard = lazy(() => import('../pages/Dashboard'));
+const Login = lazy(() => import('../pages/Login'));
+const Tracks = lazy(() => import('../pages/Tracks'));
+const Home = lazy(() => import('../pages/Home'));
+const Artists = lazy(() => import('../pages/Artists'));
 
 const routes = [
   {
-    path: "/",
+    path: '/',
     element: (
       <Suspense fallback={<LoadingPage />}>
         <Home />
@@ -18,7 +18,7 @@ const routes = [
     ),
   },
   {
-    path: "/dashboard",
+    path: '/dashboard',
     element: (
       <Suspense fallback={<LoadingPage />}>
         <Dashboard />
@@ -26,7 +26,7 @@ const routes = [
     ),
   },
   {
-    path: "/login",
+    path: '/login',
     element: (
       <Suspense fallback={<LoadingPage />}>
         <Login />
@@ -34,7 +34,7 @@ const routes = [
     ),
   },
   {
-    path: "/albums",
+    path: '/albums',
     element: (
       <Suspense fallback={<LoadingPage />}>
         <Albums />
@@ -43,7 +43,7 @@ const routes = [
   },
 
   {
-    path: "/tracks",
+    path: '/tracks',
     element: (
       <Suspense fallback={<LoadingPage />}>
         <Tracks />
@@ -52,7 +52,7 @@ const routes = [
   },
 
   {
-    path: "/artists",
+    path: '/artists',
     element: (
       <Suspense fallback={<LoadingPage />}>
         <Artists />
@@ -61,7 +61,7 @@ const routes = [
   },
 
   {
-    path: "/playlist",
+    path: '/playlist',
     element: (
       <Suspense fallback={<LoadingPage />}>
         <PlayList />
@@ -77,7 +77,7 @@ export const asideLinks = [
   //   icon: (
   //     <svg
   //       xmlns="http://www.w3.org/2000/svg"
-  //       className="fill-current hover:shadow-sm hover:shadow-gray-100"
+  //       className="fill-current"
   //       viewBox="0 0 24 24"
   //       width={19}
   //     >
@@ -87,13 +87,13 @@ export const asideLinks = [
   //   ),
   // },
   {
-    path: "/dashboard",
-    name: "Dashboard",
+    path: '/dashboard',
+    name: 'Dashboard',
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width={19}
-        className="w-5 h-5 fill-current transition duration-75 hover:shadow-sm hover:shadow-gray-100 group-hover:text-gray-900 dark:group-hover:text-white"
+        className="w-5 h-5 fill-currenttransition duration-75   group-hover:text-gray-900 dark:group-hover:text-white"
         viewBox="0 0 512 512"
         fill="currentColor"
       >
@@ -104,13 +104,13 @@ export const asideLinks = [
     ),
   },
   {
-    path: "/albums",
-    name: "Albums",
+    path: '/albums',
+    name: 'Albums',
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
-        className="w-5 h-5 hover:shadow-sm hover:shadow-gray-100 transition duration-75 group-hover:text-gray-900 dark:group-hover:text-white"
+        className="w-5 h-5   transition duration-75 group-hover:text-gray-900 dark:group-hover:text-white"
         fill="currentColor"
       >
         <g data-name="album music">
@@ -123,12 +123,12 @@ export const asideLinks = [
   },
 
   {
-    path: "/tracks",
-    name: "Tracks",
+    path: '/tracks',
+    name: 'Tracks',
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="fill-current hover:shadow-sm hover:shadow-gray-100"
+        className="fill-current"
         viewBox="0 0 24 24"
         width={19}
       >
@@ -138,12 +138,12 @@ export const asideLinks = [
     ),
   },
   {
-    path: "/artists",
-    name: "Artists",
+    path: '/artists',
+    name: 'Artists',
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="fill-current hover:shadow-sm hover:shadow-gray-100"
+        className="fill-current"
         viewBox="0 0 24 24"
         width={19}
       >
@@ -153,12 +153,12 @@ export const asideLinks = [
     ),
   },
   {
-    path: "/playlist",
-    name: "Playlist",
+    path: '/playlist',
+    name: 'Playlist',
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="fill-current hover:shadow-sm hover:shadow-gray-100"
+        className="fill-current"
         viewBox="0 0 24 24"
         width={19}
       >
@@ -171,20 +171,20 @@ export const asideLinks = [
 
 export const homeRoute = [
   {
-    path: "/",
-    name: "Home",
-    icon: "",
+    path: '/',
+    name: 'Home',
+    icon: '',
   },
   {
-    path: "/dashboard",
-    name: "Premium",
-    icon: "",
+    path: '/dashboard',
+    name: 'Premium',
+    icon: '',
   },
 
   {
-    path: "/login",
-    name: "Login",
-    icon: "",
+    path: '/login',
+    name: 'Login',
+    icon: '',
   },
 ];
 
