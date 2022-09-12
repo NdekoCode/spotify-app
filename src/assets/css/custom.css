@@ -195,6 +195,8 @@
 }
 .modal.is-track {
   bottom: 35px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 .is-track {
   min-height: 80px;
