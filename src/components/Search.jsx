@@ -67,7 +67,7 @@ const Search = () => {
         <input
           type="search"
           id="simple-search"
-          className="bg-gray-500 border-gray-300 text-gray-100 text-sm rounded-lg rounded-tr-none rounded-br-none focus:ring-blue-500 focus:border-blue-500 block w-full min-w-max p-2.5  dark:bg-gray-700 placeholder:text-white dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 duration-300 outline-none border-r-0 border-r-none"
+          className="pl-5 border-gray-300 text-gray-100 text-sm rounded-full rounded-tr-none rounded-br-none focus:ring-blue-500 focus:border-blue-500 block w-full min-w-max p-2.5  dark:bg-gray-700 placeholder:text-white dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 duration-300 outline-none border-r-0 border-r-none bg-gradient-to-r from-gray-500 via-gray-500 to-black"
           placeholder="Search"
           value={input}
           onChange={handleChange}
@@ -76,7 +76,7 @@ const Search = () => {
 
         <button
           type="submit"
-          className="p-2.5 text-sm font-medium  text-gray-300 hover:text-gray-50 rounded-lg rounded-tl-none rounded-bl-none border-l-none hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 duration-300"
+          className="p-2.5 text-sm font-medium  text-gray-300 hover:text-gray-50 rounded-full rounded-tl-none rounded-bl-none border-l-none hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 duration-300"
         >
           <svg
             className="w-5 h-5"

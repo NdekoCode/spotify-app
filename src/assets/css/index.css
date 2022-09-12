@@ -1,3 +1,18 @@
+::-webkit-scrollbar {
+  width: 12px;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: hsl(0, 7%, 92%);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  --tw-bg-opacity: 1;
+  background-color: rgba(29, 185, 84, var(--tw-bg-opacity));
+  transition: 0.35s;
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

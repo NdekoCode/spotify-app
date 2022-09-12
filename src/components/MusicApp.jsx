@@ -34,9 +34,7 @@ const MusicApp = memo(({ children }) => {
               <div className="py-10">
                 <GreetUser user={user?.username} />
               </div>
-              <div className="mt-10 md:mt-20 w-centerull sm:justify-start">
-                {children}
-              </div>
+              <div className="w-centerull sm:justify-start">{children}</div>
             </main>
           </div>
         </div>
