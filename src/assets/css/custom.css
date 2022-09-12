@@ -25,6 +25,7 @@
   position: fixed;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   height: 352px;
   width: 245px;
   bottom: 0;
@@ -38,6 +39,7 @@
   height: 100%;
   display: flex;
 }
+
 .modal .hide {
   position: absolute;
   top: -20px;
@@ -46,6 +48,7 @@
   width: 40px;
   height: 40px;
   cursor: pointer;
+  border-radius: 50%;
 }
 
 /* custom rounded classes */
@@ -190,6 +193,19 @@
 .cards:hover > .card:not(:hover) .card-bg {
   filter: brightness(0.5) saturate(0) contrast(1.2);
 }
+.modal.is-track {
+  bottom: 35px;
+}
+.is-track {
+  min-height: 80px;
+  max-height: 90px;
+  width: 100%;
+}
+.is-track .hide {
+  top: -36px;
+  right: 0px;
+}
+
 @media only screen and (min-width: 576px) {
   .cards {
     grid-template-columns: repeat(2, 1fr);
@@ -203,5 +219,23 @@
 @media only screen and (min-width: 992px) {
   .cards {
     grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .is-track {
+    height: 352px;
+    width: 280px;
+    min-height: max-content;
+    max-width: inherit;
+    max-height: inherit;
+  }
+
+  .modal.is-track {
+    bottom: 0;
+  }
+  .is-track .hide {
+    top: -20px;
+    right: -40px;
   }
 }
