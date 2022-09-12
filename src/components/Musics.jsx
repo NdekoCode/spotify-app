@@ -8,7 +8,7 @@ const Musics = () => {
   const { searchUser } = MusicContext();
 
   return (
-    <div className="grid place-items-center mt-5 bg-app ">
+    <div className="grid place-items-center mt-5">
       {searchUser.length < 1 && (
         <div className="mt-10">
           <h2 className="text-2xl heading text-center sm:text-left ">

@@ -12,7 +12,7 @@ const UserData = () => {
   return (
     <div className="flex justify-around md:justify-end order-last md:order-first mt-10 md:mt-0 md:mb-0">
       <div className="flex items-center">
-        <div className="flex items-center mr-4 text-gray-600 hover:text-gray-400 cursor-pointer">
+        <div className="flex items-center mr-4 text-gray-300 hover:text-gray-100 cursor-pointer">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width={19}
@@ -32,7 +32,7 @@ const UserData = () => {
           <a
             onClick={disconnected}
             href="/"
-            className="text-gray-600 hover:text-gray-400"
+            className="text-gray-300 hover:text-gray-100"
           >
             <div className="flex items-center">
               <svg
