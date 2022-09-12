@@ -49,7 +49,7 @@ const TrackData = () => {
       </>
     );
   }
-  return <SkeletonData />;
+  return <SkeletonData parent={false} />;
 };
 
 export default TrackData;

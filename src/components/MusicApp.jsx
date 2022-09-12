@@ -30,7 +30,7 @@ const MusicApp = memo(({ children }) => {
               <UserData />
               <Search />
             </div>
-            <main className="py-8 md:pb-12">
+            <main className="py-5 md:pb-12">
               <div className="py-10">
                 <GreetUser user={user?.username} />
               </div>

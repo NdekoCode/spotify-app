@@ -8,8 +8,11 @@ const ModalPlayer = memo(({ id, visibility, type }) => {
     setShowFrame(false);
   });
   if (visibility) {
+    const className = 'modal ' + (type === 'track' ? 'is-track' : 'is-list');
+
+    // is-track
     return (
-      <div className="modal">
+      <div className={className}>
         <div
           className="hide text-gray-400 shadow-sm hover:shadow-gray-100"
           onClick={hidePlayer}
