@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useCallback } from 'react';
 import MusicContext from '../data/AppContext';
-
+import artistImg from '../assets/img/artist.jpeg';
 function CardSong({ song }) {
   const { id, album, type, artists, name } = song;
   const { handleFrame, setTypePlay, setShowFrame, setIdSong } = MusicContext();
@@ -18,7 +18,7 @@ function CardSong({ song }) {
         <div className="px-4">
           <div className="relative group image pt-4 opacity-75 bg-transparent backdrop-blur">
             <img
-              src={album.images[0].url}
+              src={album.images[0].url ?? artistImg}
               alt={name}
               className="w-32 h-32 object-cover"
             />
