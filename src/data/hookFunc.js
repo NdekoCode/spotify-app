@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 export default function useFetch(url, data, token) {
   // On initialise l'Etat du des données à charger en AJAX
@@ -7,9 +7,9 @@ export default function useFetch(url, data, token) {
     loading: true,
   });
   let params = {
-    method: "GET",
+    method: 'GET',
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
       Authorization: token,
     },
   };
@@ -31,4 +31,3 @@ export default function useFetch(url, data, token) {
   }, [state.items, url, state.loading, token]);
   return [state.items, state.loading];
 }
-console.log("<Ll></Ll>");

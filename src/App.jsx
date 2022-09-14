@@ -5,7 +5,7 @@ import './assets/css/custom.css';
 import routes from './routes/routes';
 import MusicContext from './data/AppContext';
 import { CLIENT_ID, CLIENT_SECRET } from './data/secureData';
-import { disconnectedUser, verifyUserConnect } from './data/utilsFunc';
+import { verifyUserConnect } from './data/utilsFunc';
 
 function App() {
   const { setSetting, setUserIsConnect } = MusicContext();
