@@ -5,6 +5,7 @@ import artistImg from '../assets/img/artist.jpeg';
 function CardSong({ song }) {
   const { id, album, type, artists, name } = song;
   const { handleFrame, setTypePlay, setShowFrame, setIdSong } = MusicContext();
+
   const showPlayer = useCallback((evt) => {
     evt.preventDefault();
     setIdSong(id);

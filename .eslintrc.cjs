@@ -26,6 +26,8 @@ module.exports = {
         allowExpressionValues: true,
       },
     ],
+    'no-console': 2,
+
     ignorePropertyModificationsFor: true,
   },
 };
