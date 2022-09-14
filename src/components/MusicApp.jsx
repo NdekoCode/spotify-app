@@ -12,7 +12,6 @@ const MusicApp = memo(({ children }) => {
   const { idSong, userIsConnect, showFrame, typePlay } = MusicContext();
   const navigate = useNavigate();
   const user = getDataStorage('userData');
-  console.log(user);
   useEffect(() => {
     if (!userIsConnect) {
       navigate('/login');

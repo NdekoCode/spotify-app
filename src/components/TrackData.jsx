@@ -36,7 +36,6 @@ const TrackData = () => {
     } else {
       setTracks(tracksData.tracks);
       setDataSong((d) => ({ ...d, tracks: tracksData.tracks }));
-      // console.log("No search", tracks);
     }
   }, [searchUser, dataSongs.tracks, tracksData.tracks]);
 

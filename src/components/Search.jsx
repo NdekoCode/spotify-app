@@ -22,7 +22,6 @@ const Search = () => {
   };
   const url = `https://api.spotify.com/v1/search?q=${searchUser}&type=album,track,artist,playlist,show,episode&include_external=audio?limit=15`;
   const searchData = () => {
-    console.log(url);
     (async () => {
       const response = await fetch(url, params);
       const responseData = await response.json();
