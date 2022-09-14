@@ -1,6 +1,8 @@
 import React, { useCallback } from 'react';
 import MusicContext from '../data/AppContext';
 
+import artistImg from '../assets/img/artist.jpeg';
+
 function CardTrack({ track }) {
   const { album, artists, name, id, type } = track;
 
@@ -15,12 +17,12 @@ function CardTrack({ track }) {
     <div className="card">
       <div
         className="card-track card-bg ounded-2xl bg-gray-400 backdrop-blur-sm dark:bg-gray-700 shadow cursor-pointer min-w-max mb-3 bg-center bg-cover bg-no-repeat"
-        style={{ backgroundImage: `url(${album.images[0].url})` }}
+        style={{ backgroundImage: `url(${album.images[0].url ?? artistImg})` }}
       >
         <div className="group relative h-60 flex flex-col items-center justify-center ">
           <img
             className="block card-img rounded-full h-40 w-40 shadow-2xl"
-            src={album.images[0].url}
+            src={album.images[0].url ?? artistImg}
             alt={name}
           />
           <div className="absolute h-40 w-40 bg-gray-800 bg-opacity-0 group-hover:bg-opacity-60 flex items-center rounded-full group-hover:opacity-100 transition duration-300 justify-evenly">
