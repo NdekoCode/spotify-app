@@ -1,22 +1,22 @@
-import { useEffect } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import "./assets/css/App.css";
-import "./assets/css/custom.css";
-import routes from "./routes/routes";
-import MusicContext from "./data/AppContext";
-import { CLIENT_ID, CLIENT_SECRET } from "./data/secureData";
-import { disconnectedUser, verifyUserConnect } from "./data/utilsFunc";
+import { useEffect } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import './assets/css/App.css';
+import './assets/css/custom.css';
+import routes from './routes/routes';
+import MusicContext from './data/AppContext';
+import { CLIENT_ID, CLIENT_SECRET } from './data/secureData';
+import { disconnectedUser, verifyUserConnect } from './data/utilsFunc';
 
 function App() {
   const { setSetting, setUserIsConnect } = MusicContext();
   useEffect(() => {
     setUserIsConnect(verifyUserConnect());
     (async () => {
-      const response = await fetch("https://accounts.spotify.com/api/token", {
-        method: "POST",
+      const response = await fetch('https://accounts.spotify.com/api/token', {
+        method: 'POST',
         headers: {
-          // Considerer comme un formulaire HTMK
-          "Content-Type": "application/x-www-form-urlencoded",
+          // Considerer comme un formulaire HTML
+          'Content-Type': 'application/x-www-form-urlencoded',
         },
         body: `grant_type=client_credentials&client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}`,
       });
