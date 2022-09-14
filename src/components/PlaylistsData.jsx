@@ -30,12 +30,10 @@ const PlaylistsData = () => {
       if (playlists !== undefined) {
         setPlaylists(playlists.items);
         setDataSong((d) => ({ ...d, playlists }));
-        console.log('DOnnées avec la recherche', playlists);
       }
     } else {
       setPlaylists(playlistsData.playlists);
       setDataSong((d) => ({ ...d, playlists: playlistsData.playlists }));
-      console.log('DOnnées sans search', playlists);
     }
   }, [searchUser, dataSongs.playlists, playlistsData.playlists]);
 
