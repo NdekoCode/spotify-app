@@ -25,8 +25,7 @@ function GoogleAuthButton() {
   useEffect(() => {
     /* global google */
     google.accounts.id.initialize({
-      client_id:
-        '323982794177-sl6onc3ihvf0ahafap36enhcjrlqnkpb.apps.googleusercontent.com',
+      client_id: import.meta.env.VITE_GOOGLE_CLIENT_ID,
       callback: handleCallbackResponse,
     });
     google.accounts.id.renderButton(document.getElementById('googleButton'), {
