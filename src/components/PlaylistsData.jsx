@@ -44,7 +44,6 @@ const PlaylistsData = () => {
     playlists !== undefined &&
     Object.keys(playlists).length > 0
   ) {
-    console.log('Data loaded ', playlists);
     const { items } = playlists;
     if (items !== undefined) {
       return (
