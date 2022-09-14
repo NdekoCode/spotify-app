@@ -1,6 +1,7 @@
 import React, { useCallback } from 'react';
 import MusicContext from '../data/AppContext';
 import artistImg from '../assets/img/artist.jpeg';
+import { convertFollowersNumber } from '../data/utilsFunc';
 
 const CardArtist = ({ artist }) => {
   const { followers, id, images, name, popularity, type } = artist;
@@ -50,7 +51,9 @@ const CardArtist = ({ artist }) => {
       </div>
       <div className="py-10 px-6 text-center tracking-wide grid grid-cols-2 gap-6">
         <div className="followers">
-          <p className="text-lg text-gray-700">{followers.total}</p>
+          <p className="text-lg text-gray-700">
+            {convertFollowersNumber(followers.total)}
+          </p>
           <p className="text-gray-400 text-sm">Followers</p>
         </div>
         <div className="following">
